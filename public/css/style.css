@@ -1,0 +1,15 @@
+body{
+	background-color: rgb(240,240,240);
+}
+.ui.menu .item img.logo {
+	margin-right: 1.5em;
+}
+
+div.icon-flat h3, div.icon-flat a{
+	display: block; /*Para que ocupen toda la fila*/
+	text-align: center;
+}
+
+ .main.container {
+    margin-top: 5.5em;
+  }

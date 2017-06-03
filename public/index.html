@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="helpDeskApp">
+	<head>
+		<title>NU Help Desk</title>
+		<meta charset="utf-8">
+		<!-- CSS -->
+		
+		<link rel="stylesheet" type="text/css" href="lib/semantic/semantic.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+
+	<body>
+		<div ng-view></div>	<!--Aquí se diburán todos los componentes de acuerdo a la ruta en la que se encuentre(Las rutas están definidas en app.config.js) -->
+
+
+		<!-- JS-->
+		<script type="text/javascript" src="lib/jquery/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="lib/semantic/semantic.js"></script>
+		<!-- Components Angular-->
+		<script type="text/javascript" src="lib/angular/angular.js"></script>
+		<script type="text/javascript" src="lib/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="lib/angular-sanitize/angular-sanitize.js"></script>
+
+		<!-- Componentes de angular -->
+		<script type="text/javascript" src="app.module.js"></script>
+		<script type="text/javascript" src="app.config.js"></script>	
+
+		<script type="text/javascript" src="login-help-desk/login-help-desk.module.js"></script>
+		<script type="text/javascript" src="login-help-desk/login-help-desk.component.js"></script>
+
+		<!--Componente: barra principal -->
+		<script type="text/javascript" src="barra-principal/barra-principal.module.js"></script>
+		<script type="text/javascript" src="barra-principal/barra-principal.component.js"></script>
+		<!--Componente: secciones -->
+		<script type="text/javascript" src="seccion-bienvenido/seccion-bienvenido.module.js"></script>
+		<script type="text/javascript" src="seccion-bienvenido/seccion-bienvenido.component.js"></script>
+		<!-- COmponente Contenido de la seccion bienvenido -->
+		<script type="text/javascript" src="content-bienvenido/content-bienvenido.module.js"></script>
+		<script type="text/javascript" src="content-bienvenido/content-bienvenido.component.js"></script>
+
+		<script type="text/javascript" src="js/init-comps-semantic.js"></script>
+	</body>
+</html>

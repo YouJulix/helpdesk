@@ -1,0 +1,72 @@
+	<div class="ui grid">
+		<div class="row teal">
+			<div class="ui grid container">
+				<div class="row">
+					<div class="eight wide column">
+						<div class="ui image left floated">
+							<img src="img/logo.png" />	 <!--Nota: URL relativa a index.html -->
+						</div>
+						<h1>{{$ctrl.title}}</h1>
+						<h3 >{{$ctrl.description}}</h3>
+					</div>
+					<div class="three wide column right floated">
+						<br />
+	                	<div class="ui fluid selection dropdown">
+		                    <input name="country" type="hidden"  />
+		                    <i class="dropdown icon"></i>
+		                    <div class="default text"><i class="mx flag"></i>{{$ctrl.language}}</div>
+		                    <div class="menu">
+		                      <div class="item" data-value="mx" ng-click="$ctrl.checkLanguage('es')"><i class="mx flag"></i>{{$ctrl.spanish}}</div>
+		                      <div class="item" data-value="us" ng-click="$ctrl.checkLanguage('en')" ><i class="us flag"></i>Inglés</div>
+		                    </div>
+		                </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui grid  middle aligned celled container stackable" style="height: 80%;"> <!--//middle aligned: alineado verticalmente(alineará todos los elementos al centro del másximo height, yo defini height: 100% en este caso), center aligned: alineado horizontalmente-->
+		<div class="row" >
+			<div class="nine wide column">
+				<div class="ui grid center aligned stackable celled" style="background-color:white;"> <!-- center aligned: centrará columnas-->
+					<div class="row">
+						<div class="fourteen wide column left aligned"> <!--Alineará a la izquierda los elementos dentro de esta columna-->
+							<h1 ng-bind="$ctrl.lang"></h1>
+							<h4 class="ui black header">Rectoría</h4>
+							<p><i class="call icon"></i>951 123 45 67</p>
+							<p><i class="mail outline icon"></i>rectoria@rectoria.com</p>
+						</div>					
+					</div>
+					<div class="row">
+						<div class="fourteen wide column left aligned"> <!--Alineará a la izquierda los elementos dentro de esta columna-->
+							<h4>Plataformas Virtuales</h4>
+							<p><i class="world icon"></i><a href="#">Kabl</a></p>
+							<p><i class="world icon"></i><a href="#">Aula virtual</a></p>
+						</div>					
+					</div>
+				</div>
+			</div>
+			<div class="seven wide column center aligned">
+				<form class="ui large form">
+					<div class="ui stacked segment">
+						<h2>{{$ctrl.title_login}}</h2>
+						<i class="icon massive user"></i>
+						<div class="field">
+							<div class="ui left icon input">
+								<i class="user icon"></i>
+								<input type="text" name="email" placeholder="Correo electrónico">
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui left icon input">
+								<i class="lock icon"></i>
+								<input type="password" name="password" placeholder="Contraseña">
+							</div>
+						</div>
+						<a href="#!/{{$ctrl.lang}}/bienvenido"><div class="ui fluid large teal submit button">Ingresar</div></a>
+					</div>
+					<div class="ui error message"></div>
+				</form>
+			</div>
+		</div>
+	</div>

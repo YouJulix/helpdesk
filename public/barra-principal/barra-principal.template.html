@@ -1,0 +1,47 @@
+<div class="ui fixed large menu stackable">
+	<div class="ui container">
+		<a href="#!/{{$ctrl.lang}}/bienvenido" class="header item" id="bienvenido"><img class="logo" src="img/logo.png" />{{$ctrl.titleItem1}}</a>
+		<a href="#!/{{$ctrl.lang}}/reportes" class="item" id="reportes"><i class="icon edit"></i>{{$ctrl.titleItem2}}</a>
+		<a href="#!/{{$ctrl.lang}}/servicios" class="item" id="servicios" ><i class="icon configure"></i> <span ng-bind="$ctrl.titleItem3" ng-init="$ctrl.titleItem3='XXXXXXX'">XXX</span></a> <!--Si no le asigno un valor en el init, la vista por unas milesimas de segundos se dibujará con ccontenido en blanco(NO DIBUJA 'XXX') ya que al inico de la app $ctrl.titleItem3 = "" (Hasta que se lea el archivo .json(dictionarie) y se le asigne un valor)-->
+		<a href="#!/{{$ctrl.lang}}/faq" class="item" id="faq"><i class="icon help circle outline"></i>{{$ctrl.titleItem4}}</a>
+		
+
+  		<div class="right menu">
+  			<div class="item">
+      			<!-- <div class="ui action input">
+					<input type="text" name="search" placeholder="{{$ctrl.searchLabel}}" />
+					<button class="ui button">Seaas</button>
+				</div> -->
+				<div class="ui search">
+					<div class="ui icon input">
+						<input class="prompt" placeholder="{{$ctrl.searchLabel}}" type="text" name="">
+						<i class="search icon"></i>
+					</div>
+					<!-- <div class="results"></div> -->
+				</div>
+			</div>
+  			<!-- <a class="item"><div class="ui fluid search selection dropdown">
+						<input type="hidden" name="idioma">
+						 <i class="dropdown icon"></i>
+						 <div class="default text">Selecciona idioma</div>
+						   <div class="menu">
+									<div class="item" data-value="mx"><i class="mx flag"></i>Español</div>
+									<div class="item" data-value="us"><i class="us flag"></i>Inglés</div>
+								</div>
+					</div></a> -->
+			<div class="item">
+				<div class="ui fluid selection dropdown">
+				<!-- <div class="ui fluid search selection dropdown"> -->
+					<input name="country" type="hidden" />
+					<i class="dropdown icon"></i>
+					<div class="default text"><i class="{{$ctrl.flag}} flag"></i>{{$ctrl.languageLabel}}</div>
+					<div class="menu">
+					  <div class="item" data-value="mx" ng-click="$ctrl.checkLanguage('es')"><i class="mx flag"></i>{{$ctrl.spanishLabel}}</div>
+					  <div class="item" data-value="us" ng-click="$ctrl.checkLanguage('en')"><i class="us flag"></i>{{$ctrl.englishLabel}}</div>
+					</div>
+				</div>
+			</div>
+			<a href="index.html" class="item" ><i class="icon power large red"></i>{{$ctrl.logOutLabel}}</a>
+  		</div>
+	</div>
+</div>

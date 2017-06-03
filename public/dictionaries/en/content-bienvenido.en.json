@@ -1,0 +1,24 @@
+{
+	"main_title" : "Welcome",
+	"main_icon" : "home",
+	"sections" : [
+		{
+			"title" : "Reports",
+			"icon"  :  "edit",
+			"description" : "<br><b>Make</b> reports on damaged equipment or <b>check</b> the status of your previous reports.",
+			"link" : "reportes"
+		},
+		{
+			"title" : "Services",
+			"icon"  :  "configure",
+			"description" : "<br>Request the following services<b><ul><li>Software Download</li><li>Software Install</li><li>User Accounts</li><li>Internet Access</li></ul></b>",
+			"link" : "servicios"
+		},
+		{
+			"title" : "Frequent Questions and Answers",
+			"icon"  :  "help circle outline",
+			"description" : "<br>See the section for <b>tutorials</b>, and <b>solutions</b> of the most common problems.",
+			"link" : "faq"
+		}
+	]
+}

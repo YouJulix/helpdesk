@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NovaDesk | Solicitar Servicio</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/semantic.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="ui fixed large menu stackable">
+        <div class="ui container">
+            <a href="index2.html" class="header item"><img class="logo" src="assets/images/logo.png">NovaDesk</a>
+            <a href="reportes.html" class="item"><i class="icon edit"></i>Reportes</a>
+            <a href="servicios.html" class="item active"><i class="icon configure"></i>Servicios</a>
+            <a href="faq.html" class="item"><i class="icon help circle outline"></i>Preguntas Frecuentes</a>
+            <div class="item">
+                <div class="ui fluid selection dropdown">
+                    <input name="country" type="hidden">
+                    <i class="dropdown icon"></i>
+                    <div class="default text"><i class="mx flag"></i>Idioma</div>
+                    <div class="menu">
+                      <div class="item" data-value="mx"><i class="mx flag"></i>Español</div>
+                      <div class="item" data-value="us"><i class="us flag"></i>Inglés</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right menu">
+                <div class="item">
+                    <div class="ui action input">
+                        <input type="text" name="search" placeholder="Buscar">
+                        <button class="ui button">Buscar</button>
+                    </div>
+                </div>
+                <a href="index.html" class="item"><i class="icon power large red"></i></a>
+            </div>
+        </div>
+    </div>
+		
+	<div class="ui grid main container stackable">
+		<div class="row">
+			<div class="column eleven wide">
+				<div class="ui segment">
+					<h2 class="ui dividing header teal"><i class="icon configure"></i>Solicitar Servicio</h2>
+					<div class="ui top attached tabular large menu">
+					<!-- <div class="ui pointing secondary large menu"> -->
+						<a class="item active" data-tab="software"><i class="large icon database"></i>Software</a>
+						<a class="item" data-tab="acceso_internet"><i class="large icon world"></i>Internet</a>
+						<a class="item" data-tab="cuentas_usuario"><i class="large icon users"></i>Cuentas de Usuario</a>
+					</div>
+					<div class="ui bottom attached active tab segment" data-tab="software">
+						<div class="ui pointing secondary menu">
+							<a class="item active" data-tab="instalacion_software"><i class="large icon disk outline"></i>Instalación de Software</a>
+							<a class="item" data-tab="descarga_software"><i class="large icon download"></i>Descarga de Software</a>
+						</div>
+						<div class="ui active tab" data-tab="instalacion_software">
+							<div class="ui large form segment">
+								<!-- <h3 class="ui dividing header blue">Instalación de Software</h3> -->
+								<!-- <div class="inline fields"> -->
+									<div class="eight wide field">
+										<label>Nombre del Software</label>
+										<input type="text" name="nombre_software">
+									</div>
+								<!-- </div> -->
+								<!-- <div class="inline fields"> -->
+									<div class="eight wide field">
+										<label>Versión del Software</label>
+										<input type="text" name="version_software">
+									</div>
+								<!-- </div> -->
+								<div class="eight wide field">
+									<label>Número de equipos</label>
+									<input type="number" name="num_equipos">
+								</div>
+								<div class="eight wide field">
+									<label>Aula</label>
+									<input type="text" name="num_aula">
+								</div>
+								<div class="eight wide field">
+									<label>Materia</label>
+									<input type="text" name="materia">
+								</div>
+								<div class="eight wide field">
+									<label>Fecha límite</label>
+									<input type="date" name="fecha_limite">
+								</div>
+								<div class="field">
+									<label>Comentarios</label>
+									<textarea rows="4"></textarea>
+								</div>
+								<button class="ui button blue" type="submit">Enviar</button>
+							</div>
+						</div>
+						<div class="ui tab" data-tab="descarga_software">
+							<div class="ui large form segment">
+								<div class="eight wide field">
+									<label>Nombre del Software</label>
+									<input type="text" name="nombre_software">
+								</div>
+								<div class="eight wide field">
+									<label>Versión del Software</label>
+									<input type="text" name="version_software">
+								</div>
+								<div class="eight wide field">
+									<label>Fecha límite</label>
+									<input type="date" name="fecha_limite">
+								</div>
+								<div class="field">
+									<label>Comentarios</label>
+									<textarea rows="4"></textarea>
+								</div>
+								<button class="ui button blue" type="submit">Enviar</button>
+							</div>
+						</div>
+					</div>
+					
+					<div class="ui bottom attached tab segment" data-tab="acceso_internet">
+							<div class="ui pointing secondary menu">
+								<a class="item active" data-tab="equipo_externo"><i class="large icon laptop"></i>Equipo Externo</a>
+								<a class="item" data-tab="equipo_interno"><i class="large icon desktop"></i>Equipo Interno</a>
+							</div>
+							<div class="ui active tab segment" data-tab="equipo_externo">
+								<div class="ui large form">
+									<div class="eight wide field">
+										<label>Dirección MAC</label>
+										<input type="text" name="mac_addres">
+									</div>
+									<div class="field">
+										<label>Lugar de conexión</label>
+										<div class="fields">
+											<div class="six wide field">
+												<div class="grouped fields">
+													<div class="field">
+														<div class="ui radio checkbox">
+															<input type="radio" name="lugar_conexion">
+															<label>Aulas</label>
+														</div>
+													</div>
+													<div class="field">
+														<div class="ui radio checkbox">
+															<input type="radio" name="lugar_conexion">
+															<label>Biblioteca</label>
+														</div>
+													</div>
+													<div class="field">
+														<div class="ui radio checkbox">
+															<input type="radio" name="lugar_conexion">
+															<label>Edificio de asistentes</label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="six wide field">
+												<div class="grouped fields">
+													<div class="field">
+														<div class="ui radio checkbox">
+															<input type="radio" name="lugar_conexion">
+															<label>Edificio de Profesores</label>
+														</div>
+													</div>
+													<div class="field">
+														<div class="ui radio checkbox">
+															<input type="radio" name="lugar_conexion">
+															<label>Laboratorio de Electrónica</label>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="ui tab segment" data-tab="equipo_interno">
+								<div class="ui large form">
+									<div class="field eight wide">
+										<label>Aula</label>
+										<input type="text" name="aula">
+									</div>
+									<div class="field eight wide">
+										<label>Fecha de termino</label>
+										<input type="text" name="fecha">
+									</div>
+									<div class="field eight wide">
+										<label>Hora de Inicio</label>
+										<input type="text" name="hora_inicio">
+									</div>
+									<div class="field eight wide">
+										<label>Hora de termino</label>
+										<input type="text" name="hora_termino">
+									</div>
+									<div class="field">
+										<label>Sitios(URL) de acceso</label>
+										<textarea rows="2"></textarea>
+									</div>
+								</div>
+							</div>
+							<button class="ui button blue">Enviar</button>
+					</div>
+					<div class="ui bottom attached tab segment" data-tab="cuentas_usuario">
+						<div class="ui large form  segment">
+							<div class="field">
+								<label>Plataforma</label>
+								<div class="grouped fields">
+									<div class="field">
+										<div class="ui radio checkbox">
+											<input type="radio" name="plataforma">
+											<label>Aula Virtual</label>
+										</div>
+									</div>
+									<div class="field">
+										<div class="ui radio checkbox">
+											<input type="radio" name="plataforma">
+											<label>Kabl</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="field">
+								<label>Actividad</label>
+								<div class="grouped fields">
+									<div class="field">
+										<div class="ui radio checkbox">
+											<input type="radio" name="actividad">
+											<label>Solicitar acceso a la plataforma</label>
+										</div>
+									</div>
+									<div class="field">
+										<div class="ui radio checkbox">
+											<input type="radio" name="actividad">
+											<label>Restablecer contraseña</label>
+										</div>
+									</div>
+								</div>
+							</div>					
+							<div class="field">
+								<label>Descripción del Problema</label>
+								<textarea rows="4"></textarea>
+							</div>
+							<button class="ui button blue" type="submit">Enviar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="column five wide ui segment">
+                <div class="ui grid center aligned stackable celled"> <!-- center aligned: centrará columnas-->
+                    <div class="row">
+                        <div class="fiveteen wide column left aligned" >
+                            <h3>Contactos</h3>
+                            <div class="ui accordion fluid styled">
+                                <div class="active title">
+                                    <h4><i class="icon dropdown"></i>Rectoría</h4>
+                                </div>                          
+                                <div class="active content">
+                                    <p><i class="call icon"></i>951 123 45 67</p>
+                                    <p><i class="mail outline icon"></i>rectoria@rectoria.com</p>
+                                </div>  
+                                <div class="title">
+                                    <h4><i class="icon dropdown"></i>Vice Rectoría</h4>
+                                </div>                          
+                                <div class="content">
+                                    <p><i class="call icon"></i>951 123 45 67</p>
+                                    <p><i class="mail outline icon"></i>rectoria@rectoria.com</p>
+                                </div>  
+                                <div class="title">
+                                    <h4><i class="icon dropdown"></i>Servicios Escolares</h4>
+                                </div>                          
+                                <div class="content">
+                                    <p><i class="call icon"></i>951 123 45 67</p>
+                                    <p><i class="mail outline icon"></i>rectoria@rectoria.com</p>
+                                </div>
+                                <div class="title">
+                                    <h4><i class="icon dropdown"></i>Departamento de Redes</h4>
+                                </div>                          
+                                <div class="content">
+                                    <p><i class="call icon"></i>951 123 45 67</p>
+                                    <p><i class="mail outline icon"></i>rectoria@rectoria.com</p>
+                                </div>
+                                <div class="title">
+                                    <h4><i class="icon dropdown"></i>Departamento de Multimedios</h4>
+                                </div>                          
+                                <div class="content">
+                                    <p><i class="call icon"></i>951 123 45 67</p>
+                                    <p><i class="mail outline icon"></i>rectoria@rectoria.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="background-color: white;">
+                        <div class="fiveteen wide column left aligned"> <!--Alineará a la izquierda los elementos dentro de esta columna-->
+                            <h3>Plataformas Virtuales</h3>
+                            <p><i class="world icon"></i><a href="#">Kabl</a></p>
+                            <p><i class="world icon"></i><a href="#">Aula virtual</a></p>
+                        </div>                  
+                    </div>
+                    <div class="row blue">
+                        <div class="fourteen wide column">
+                            <h4>Chat</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+		</div>
+	</div>
+	<br>
+    <div class="ui vertical segment footer">
+        <div class="ui center aligned container fluid">
+          <div class="ui stackable divided grid">
+            <div class="row teal">
+                <div class="three wide column">
+                  <h4 class="ui inverted header">Redes Sociales</h4>
+                  <div class="ui inverted link list">
+                    <a href="#" class="item"><i class="large icon facebook"></i>Facebook</a>
+                    <a href="#" class="item"><i class="large icon twitter"></i>Twitter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                  </div>
+                </div>
+                <div class="four wide column">
+                  <h4 class="ui inverted header">Responsable:</h4>
+                  <p>NovaUniversitas</p>
+                  <p>NovaUniversitas  © 2017</p>
+                </div>
+                <div class="six wide column">
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/semantic.js"></script>
+	<script type="text/javascript">		
+		$('.ui.accordion').accordion();
+		$('.menu .item').tab();
+		$('.ui.dropdown').dropdown();
+	</script>
+</body>
+</html>

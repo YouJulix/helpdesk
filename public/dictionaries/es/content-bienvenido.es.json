@@ -1,0 +1,24 @@
+{
+	"main_title" : "Bienvenido",
+	"main_icon" : "home",
+	"sections" : [
+		{
+			"title" : "Reportes",
+			"icon"  :  "edit",
+			"description" : "<br><b>Realiza</b> reportes sobre equipos dañados o <b>revisa</b> el estado de tus anteriores reportes.",
+			"link" : "reportes"
+		},
+		{
+			"title" : "Servicios",
+			"icon"  :  "configure",
+			"description" : "<br>Solicita los siguientes servicios:<b><ul><li>Descarga de Software</li><li>Instalación de Software</li><li>Cuentas de Usuario</li><li>Acceso a Internet</li></ul></b>",
+			"link" : "servicios"
+		},
+		{
+			"title" : "Preguntas Frecuentes",
+			"icon"  :  "help circle outline",
+			"description" : "<br>Consulta la sección para conocer <b>tutoriales</b>, y <b>soluciones</b> de los problemas más habitulaes. ",
+			"link" : "faq"
+		}
+	]
+}

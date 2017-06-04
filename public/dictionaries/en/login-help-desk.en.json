@@ -1,8 +1,13 @@
 {
 	"title": "NovaDesk",
 	"description": "Help System",
-	"language" : "Language",
-	"spanish": "Spanish",
-	"english": "English",
-	"title_login": "Log In"
+	"languageLabel" : "Language",
+	"spanishLabel": "Spanish",
+	"englishLabel": "English",
+	"title_login": "Log In",
+	"rectoryLabel" : "Rectory",
+	"platformsVirtualLabel": "Virtual Platforms",
+	"emailLabel": "email",
+	"passwordLabel": "password",
+	"signInLabel" : "Sig In"
 }

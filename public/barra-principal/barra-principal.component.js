@@ -76,6 +76,7 @@ angular.
 				//alert("lang: " + self.lang + " , section: " + self.section);
 				
 				self.changeLanguage(self.lang, self.section);
+
 				switch(self.lang){
 					case "en":
 						self.flag = "us";
@@ -86,6 +87,9 @@ angular.
 					default:
 						self.flag = "us";
 						break;
+				}
+				self.clearLocalStorage = function (){
+					localStorage.clear();
 				}
 
 				initCompsSemanticUI();	

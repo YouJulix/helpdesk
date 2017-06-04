@@ -5,6 +5,8 @@ angular.
 			controller: ['$http', '$routeParams', function LoginHelpDeskController($http, $routeParams){
 				var self = this;			
 
+				self.dataValid = true; //¿Datos validos?// Boleano que servirá para saber si se muestra o no un mensaje de error de login.//Al inicio no se muestra
+
 				self.changeLanguage = function(lang){
 					if(lang == "es" || lang == "en" ){
 						$http({
@@ -14,9 +16,15 @@ angular.
 							if(typeof(data) == 'object'){
 								self.title = data.title;
 								self.description = data.description;
-								self.language = data.language;
-								self.spanish = data.spanish;
+								self.languageLabel = data.languageLabel;
+								self.spanishLabel = data.spanishLabel;
+								self.englishLabel = data.englishLabel;
 								self.title_login = data.title_login;
+								self.rectoryLabel = data.rectoryLabel;
+								self.platformsVirtualLabel = data.platformsVirtualLabel;
+								self.emailLabel = data.emailLabel;
+								self.passwordLabel = data.passwordLabel;
+								self.signInLabel = data.signInLabel;
 							}else{
 								alert('Error al intentar recuperar el cliente');
 							}
@@ -47,6 +55,51 @@ angular.
 				//Cargar en el idioma correcto cuando se ingresa URL (Cuando se carga por primera vez el componente)
 				self.lang = $routeParams.lang;
 				self.changeLanguage(self.lang); //
+				switch(self.lang){
+					case "en":
+						self.flag = "us";
+						break;
+					case "es":
+						self.flag = "mx";
+						break;
+				}
+
+
+				self.validateData = function(){
+					//alert("Se validarán tus datos: " + self.email +", " + self.password);
+					$http({
+						method: 'GET',
+						//url: 'localhost:8000/api/v1.0/users/' + self.email + "/" + self.password //NO Funciona
+						url: 'http://localhost:8000/api/v1.0/users/' + self.email + "/" + self.password //Es necesario ponerle http:// al inicio para que funcione
+					}).success(function(data){ //Data es un array con un(os) objeto(s)
+						if(typeof(data) == 'object'){
+							//console.log(data);
+							if(data == ""){ //Si no se encuentra ningun usuario con ese user y ese password
+								self.dataValid = false; //Boolean activará mensaje de error en la vista
+							}else{
+								self.dataValid = true;
+								console.log(data);
+								//Cambiar a otra locacion de los routes //De la Single Page Application
+								//window.location = "/#!/es/bienvenido"; //De la ruta, cambia lo que hay despues de index.html/
+								//localStorage.setItem("email", data.email);//NO FUNCA
+								localStorage.setItem("email", data[0].email);//NO FUNCA
+								localStorage.setItem("admin", data[0].admin);
+								if(data[0].admin == "false"){
+									window.location = '#!/' + self.lang +'/bienvenido';
+								}
+								if(data[0].admin == "true"){
+									//window.location = "/#!/" + self.lang +"/bienvenido";
+									window.location = "#!/" + self.lang + "/admin";
+								}
+							}
+						}else{
+							alert('Error al intentar recuperar el cliente');
+						}
+					}).
+					error(function(){
+						alert('Error al intentar recuperar el cliente');
+					});
+				}
 			}
 			]
 		});

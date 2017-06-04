@@ -1,8 +1,13 @@
 {
 	"title": "NovaDesk",
 	"description": "Sistema de ayuda",
-	"language" : "Idioma",
-	"spanish": "Español",
-	"english": "Inglés",
-	"title_login": "Ingresa a tu cuenta"
+	"languageLabel" : "Idioma",
+	"spanishLabel": "Español",
+	"englishLabel": "Inglés",
+	"title_login": "Ingresa a tu cuenta",
+	"rectoryLabel" : "Rectoría",
+	"platformsVirtualLabel": "Plataformas Virtuales",
+	"emailLabel": "Correo Electrónico",
+	"passwordLabel": "Contraseña",
+	"signInLabel" : "Ingresar"
 }

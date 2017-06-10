@@ -1,0 +1,25 @@
+<div class="ui fixed large menu stackable">
+	<div class="ui container">
+		<span class="header item" ><img class="logo" src="img/logo.png" />NovaDesk</span>
+		<a href="#!/{{$ctrl.lang}}/admin/notificaciones" class="item" id="notificaciones"><i class="icon world"></i>Notificaciones</a>
+		<a href="#!/{{$ctrl.lang}}/admin/faq" class="item" id="faq"><i class="icon help circle outline"></i>Preguntas frecuentes</a>
+		
+
+  		<div class="right menu">
+  			<div class="item">
+      			<!-- <div class="ui action input">
+					<input type="text" name="search" placeholder="{{$ctrl.searchLabel}}" />
+					<button class="ui button">Seaas</button>
+				</div> -->
+				<div class="ui search">
+					<div class="ui icon input">
+						<input class="prompt" placeholder="{{$ctrl.searchLabel}}" type="text" name="">
+						<i class="search icon"></i>
+					</div>
+					<!-- <div class="results"></div> -->
+				</div>
+			</div>
+			<a href="index.html" class="item" ng-click="$ctrl.clearLocalStorage()"><i class="icon power large red"></i>Cerrar sesión</a>
+  		</div>
+	</div>
+</div>

@@ -12,7 +12,7 @@ angular.
 						$http({
 							method: 'GET',
 							url: 'dictionaries/' + lang +'/login-help-desk.' + lang +'.json'
-						}).success(function(data){
+						}).success(function(data){ //Data se vuelca a un objeto(Proveniente de un objeto JSON)
 							if(typeof(data) == 'object'){
 								self.title = data.title;
 								self.description = data.description;
@@ -25,6 +25,8 @@ angular.
 								self.emailLabel = data.emailLabel;
 								self.passwordLabel = data.passwordLabel;
 								self.signInLabel = data.signInLabel;
+								self.headerMessageError = data.headerMessageError;
+								self.messageError = data.messageError;
 							}else{
 								alert('Error al intentar recuperar el cliente');
 							}

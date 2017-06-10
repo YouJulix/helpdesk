@@ -9,5 +9,7 @@
 	"platformsVirtualLabel": "Plataformas Virtuales",
 	"emailLabel": "Correo Electrónico",
 	"passwordLabel": "Contraseña",
-	"signInLabel" : "Ingresar"
+	"signInLabel" : "Ingresar",
+	"headerMessageError" :  "Usuario Incorrecto",
+	"messageError" : "No ha sido encontrado el usuario o la contraseña"
 }

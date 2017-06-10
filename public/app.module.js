@@ -3,5 +3,8 @@ angular.module('helpDeskApp',[
 	'loginHelpDesk',
 	'barraPrincipal',
 	'seccionBienvenido',
-	'contentBienvenido'
+	'contentBienvenido',
+	'barraAdmin',
+	'seccionAdminNotific',
+	'contentAdminNotific'
 	]);

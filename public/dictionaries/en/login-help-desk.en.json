@@ -9,5 +9,7 @@
 	"platformsVirtualLabel": "Virtual Platforms",
 	"emailLabel": "email",
 	"passwordLabel": "password",
-	"signInLabel" : "Sig In"
+	"signInLabel" : "Sig In",
+	"headerMessageError" :  "User incorrect",
+	"messageError" : "Not found user or password"
 }

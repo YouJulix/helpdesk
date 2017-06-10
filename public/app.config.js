@@ -10,13 +10,33 @@ angular.
 					template: function(urlAttr){
 						if(localStorage.getItem("email") && localStorage.getItem("admin")){ //Si hay alguien logueado
 							if(localStorage.getItem("admin")=="true"){
-								return "Has lo tuyo admin";
+								//return "Has lo tuyo admin";
+								//return "<barra-admin></barra-admin>";
+								window.location = "#!/" + urlAttr.lang + "/admin/notificaciones";
 							}
 							if(localStorage.getItem("admin")=="false"){
 								window.location = "#!/" + urlAttr.lang + "/bienvenido";
 							}
 						}else{
 							return '<login-help-desk></login-help-desk>';
+						}
+					}
+				}).
+				when('/:lang/:section/:submenu',{
+					template: function(urlAttr){ //Objeto que cacha los key,,valor de la URL
+						switch(urlAttr.section){
+							case "admin": //Entran a la ruta admin
+								if(localStorage.getItem("admin")=="true"){	
+									var subseccion = urlAttr.submenu;
+									if( subseccion == "notificaciones"){
+										subseccion = "notific"; //LO cambio porque mi componente se llama <seccion-admin-notific> //LO hice así para ahorrar espacio, pero en la URL sí debe marcarse '.../notificaciones'
+									}
+									return "<seccion-admin-" +  subseccion + "></seccion-admin-"  + subseccion + ">";
+								}else{
+									window.location = "#!/" + urlAttr.lang + "/login";
+								}
+								break;
+							default:
 						}
 					}
 				}).
@@ -27,7 +47,9 @@ angular.
 						switch(urlAttr.section){
 							case "admin": //Entran a la ruta admin
 								if(localStorage.getItem("admin")=="true"){
-									return "Has lo tuyo admin";
+									//return "Has lo tuyo admin";
+									//return "<barra-admin></barra-admin>";
+									window.location = "#!/" + urlAttr.lang + "/admin/notificaciones";
 								}else{
 									window.location = "#!/" + urlAttr.lang + "/login";
 								}

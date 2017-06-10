@@ -1,0 +1,2 @@
+angular.module('barraAdmin', [
+	'ngRoute']);

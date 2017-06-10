@@ -40,7 +40,7 @@
 					<div class="row">
 						<div class="fourteen wide column left aligned"> <!--Alineará a la izquierda los elementos dentro de esta columna-->
 							<h4>{{$ctrl.platformsVirtualLabel}}</h4>
-							<p><i class="world icon"></i><a href="#">Kabl</a></p>
+							<p><i class="world icon"></i><a href="www.novauniversitas.edu.mx">Kabl</a></p>
 							<p><i class="world icon"></i><a href="#">Aula virtual</a></p>
 						</div>					
 					</div>
@@ -64,8 +64,8 @@
 							</div>
 						</div>
 						<div class="ui error message" ng-hide="$ctrl.dataValid">
-							<div class="header">Usuario Incorrecto</div>
-							<p>No ha sido encontrado el usuario o la contraseña</p>
+							<div class="header">{{$ctrl.headerMessageError}}</div>
+							<p>{{$ctrl.messageError}}</p>
 						 </div>
 						<!-- <a href="#!/{{$ctrl.lang}}/bienvenido"> -->
 						<button class="ui fluid large teal submit button">{{$ctrl.signInLabel}}</button>

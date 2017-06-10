@@ -10,6 +10,11 @@ var users_routes = require('./routes/users-api/users.routes'); //Routes y app.us
 var UserModel = require('./routes/users-api/users.schema'); //Instancio el codigo 'users.schema.js' en la variable UserModel, el codigo de 'users.schema.js' registra un schema al modelo 'User', para que posteriormente dicho modelo se pueda utilizar en el controlador (Busquedas sobre ese modelo base)
 var UserCtrl = require('./routes/users-api/users.controller'); //Instancio el codigo 'users.controller.js' en la variable UserCtrl,
 
+//Api reportes de usuarios
+var reportes_routes = require('./routes/reportes-api/reportes.routes'); 
+var ReportModel = require('./routes/reportes-api/reportes.schema'); 
+var ReportCtrl = require('./routes/reportes-api/reportes.controller');
+
 //Connection to BD
 mongoose.connect(db.url);
 
@@ -25,6 +30,8 @@ app.use(express.static('public')); //Para el servicio de archivos estáticos com
 
 //API routes
 users_routes.addAPIRouter(app, UserCtrl); //La funcion addAPIRouter enlaza rutas de un api que creamos a sus controladores(funciones); y hace que 'app' use esas rutas(app.use())
+//API routes_Reportes
+reportes_routes.addAPIRouter(app, ReportCtrl); //La funcion addAPIRouter enlaza rutas de un api que creamos a sus controladores(funciones); y hace que 'app' use esas rutas(app.use())
 
 //Start Server
 app.listen(port, function(){

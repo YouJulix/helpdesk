@@ -21,6 +21,11 @@ var servSoftModel = require('./routes/servicio-software-api/servicio-software.sc
 var servSoftwCtrl = require('./routes/servicio-software-api/servicio-software.controller');
 var servSoftwRoutes = require('./routes/servicio-software-api/servicio-software.routes'); 
 
+//API ServiceInternet
+var internet_routes = require('./routes/internet-api/internet.routes'); 
+var InternetModel = require('./routes/internet-api/internet.schema'); 
+var InternetCtrl = require('./routes/internet-api/internet.controller');
+
 //Connection to BD
 mongoose.connect(db.url);
 
@@ -40,6 +45,8 @@ users_routes.addAPIRouter(app, UserCtrl); //La funcion addAPIRouter enlaza rutas
 reportes_routes.addAPIRouter(app, ReportCtrl); //La funcion addAPIRouter enlaza rutas de un api que creamos a sus controladores(funciones); y hace que 'app' use esas rutas(app.use())
 //API Servicio de Software
 servSoftwRoutes.addAPIRouter(app, servSoftwCtrl);
+//Api internet_service
+internet_routes.addAPIRouter(app, InternetCtrl);
 
 //Start Server
 app.listen(port, function(){

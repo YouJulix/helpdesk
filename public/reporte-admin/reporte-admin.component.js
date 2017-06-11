@@ -31,9 +31,8 @@ angular.
 					}else{
 						//No hagas nada
 					}
-					
 				}
-
+				
 				self.updateReporte = function(){
 					$http({
 						method : 'PUT',

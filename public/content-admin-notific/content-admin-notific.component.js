@@ -16,6 +16,16 @@ angular.
 					alert("Error recuperando reportes");
 				});
 
+				$http({
+					method : 'GET',
+					url : 'http://localhost:8000/api/v1.0/servicio-software'
+				}).success(function(data){ //Array de objetos
+					self.serviciosSoftware = data;
+					self.totalServSoftware = self.serviciosSoftware.length;
+				}).error(function(){
+					alert("Error recuperando servicios de software");
+				});
+
 				initCompsSemanticUI();
 			}]
 		});

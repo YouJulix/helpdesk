@@ -32,7 +32,9 @@ exports.addServicioSoftw= function(req, res){
 		aula : 				req.body.aula,
 		materia : 			req.body.materia,
 		fechaFinal : 		req.body.fechaFinal,
-		comentarios : 		req.body.comentarios
+		comentarios : 		req.body.comentarios,
+		estado		: 		req.body.estado,
+		solucion	: 		req.body.solucion,
 	});
 	newServicioSoftw.save(function(err, servicioSoftware){ //con ...save() Guardamos la estructura instanciada anteriormente
 		if(err){
@@ -43,5 +45,43 @@ exports.addServicioSoftw= function(req, res){
 		res.status(200).jsonp(servicioSoftware);
 
 	})
+}
 
+
+exports.updateServicioSoftw = function(req, res){
+	//Report.findReportById({ "idReporte" : req.params.idReporte }, //NOTA: Esto no funciona NO SE RECONOCE LA FUNCION findReportById en tiempo de ejecucion dentro de este bloque
+	ServicioSoftw.find({ "idSolicitud" : req.params.idSolicitud }, function(err, servicioSoftw){ //busco elemento a actualizar(mongoose guarda su _id)
+		servicioSoftw = servicioSoftw[0]; //el servicioSoftw  retornado por el find es un array de un único elemento, lo convertimos en un objeto
+		servicioSoftw.tipo			= req.body.tipo;
+		servicioSoftw.nombreSoftware	= req.body.nombreSoftware;
+		servicioSoftw.versionSoftware	= req.body.versionSoftware;
+		servicioSoftw.numeroEquipos		= req.body.numeroEquipos;
+		servicioSoftw.date	= req.body.date;
+		servicioSoftw.aula				= req.body.aula;
+		servicioSoftw.materia	= req.body.materia;
+		servicioSoftw.fechaFinal		= req.body.fechaFinal;
+		servicioSoftw.comentarios	= req.body.comentarios;
+		servicioSoftw.estado		= req.body.estado;
+		servicioSoftw.solucion	= req.body.solucion;
+
+//		report[0].save(function(err){
+		servicioSoftw.save(function(err){
+			if(err)
+				return res.status(500).send(err.message);
+			console.log("PUT /servicio-software/idSolicitud");
+			res.status(200).send(ServicioSoftw);
+		})
+	})
+}
+
+exports.deleteServicioSoftw = function(req, res){
+	//Report.findReportById({ "idReporte" : req.params.idReporte }, //NOTA: Esto no funciona NO SE RECONOCE LA FUNCION findReportById en tiempo de ejecucion dentro de este bloque
+	ServicioSoftw.find({ "idSolicitud" : req.params.idSolicitud }, function(err, servicioSoftw){ //busco elemento a eliminar(mongoose guarda su _id)
+		servicioSoftw[0].remove(function(err){ //Find regresa un array, debemos tomar el primer y único elemento que regreso ( en la posicion [0])
+			if(err)
+				return res.status(500).send(err.message);
+			console.log('DELETE /servicio-software/:idSolicitud');
+			res.status(200).send();
+		})
+	})
 }

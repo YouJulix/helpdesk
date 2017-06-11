@@ -13,9 +13,11 @@ var ServicioSoftwSchema = new Schema({
 		aula : 				String,
 		materia : 			String,
 		fechaFinal : 		{ type: Date, default: Date.now },
-		comentarios : 		String
+		comentarios : 		String,
+		estado	: String,
+		solucion : 	String
 	},{
-		collection : 'servicio-software'
+		collection : 'servicio_software'
 	}
 );
 

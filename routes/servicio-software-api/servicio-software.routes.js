@@ -9,7 +9,9 @@ exports.addAPIRouter = function(app, ServSoftCtrl){ //Siempre hay que utilizar e
 		.post(ServSoftCtrl.addServicioSoftw);
 		
 	servsSoft.route('/servicio-software/:idSolicitud') 
-		.get(ServSoftCtrl.findServicioSoftwById);
+		.get(ServSoftCtrl.findServicioSoftwById)
+		.put(ServSoftCtrl.updateServicioSoftw)
+		.delete(ServSoftCtrl.deleteServicioSoftw);
 
 	
 	app.use("/api/v1.0", servsSoft); //Usar en la ruta '/api/v1.0', las rutas/api definidas en el objeto  users

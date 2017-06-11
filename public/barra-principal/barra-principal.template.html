@@ -14,8 +14,10 @@
 				</div> -->
 				<div class="ui search">
 					<div class="ui icon input">
-						<input class="prompt" placeholder="{{$ctrl.searchLabel}}" type="text" name="">
-						<i class="search icon"></i>
+						<form ng-submit="$ctrl.search()">
+							<input class="prompt" placeholder="{{$ctrl.searchLabel}}" type="text" name="" ng-model="$ctrl.searchText" >
+							<i class="search icon"></i>
+						</form>
 					</div>
 					<!-- <div class="results"></div> -->
 				</div>

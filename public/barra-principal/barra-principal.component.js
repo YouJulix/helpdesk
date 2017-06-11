@@ -92,6 +92,15 @@ angular.
 					localStorage.clear();
 				}
 
+				self.search = function(){
+					//alert("Buscaremos: " + self.searchText);
+					//alert("#!/" + self.lang + "/busqueda/" + encodeURI(self.searchText) ); //The encodeURI() function is used to encode a URI.);
+					window.location = "#!/" + self.lang + "/busqueda/" + encodeURI(self.searchText); //The encodeURI() function is used to encode a URI.
+					//This function encodes special characters, except: , / ? : @ & = + $ # (Use encodeURIComponent() to encode these characters).
+					//Uso encodeURI para que se mantenga el estilo de codificación de las URI(escapar espacios, acentos,..), y que no se manden espacios en blancos no codificados(Cuando ingreso más de una palabra en el input de búsqueda)
+					//Tip: Use the decodeURI() function to decode an encoded URI.
+				}
+
 				initCompsSemanticUI();	
 			}]
 		});

@@ -10,9 +10,9 @@
 		<div class="ui divided items">			
 			<div class="item" ng-repeat="reporte in $ctrl.reportes">
 				<div class="ui tiny image middle aligned">
-					<img src="img/logo.png">
+					<!-- <img src="img/logo.png"> -->
+					<i class="icon edit huge circular"></i>
 				</div>
-				
 				<div class="content">
 					<a class="Header">{{reporte.userId}}</a>
 					<div class="meta">
@@ -34,6 +34,42 @@
 		</div>
 	</div>
 	<div class="ui bottom attached tab segment" data-tab="servicios">
-Lista de servicios
-	</div>					
+			<div class="ui pointing secondary menu">
+				<a class="item active" data-tab="software"><i class="large icon disk outline"></i>Software <span class="ui label">{{$ctrl.totalServSoftware}}</span></a>
+				<a class="item" data-tab="internet"><i class="large icon world"></i>Internet</a>
+				<a class="item" data-tab="cuentas_usuario"><i class="large icon users"></i>Cuentas de Usuario</a>
+			</div>
+			<div class="ui active tab" data-tab="software">
+				<div class="ui divided items">
+					<div class="item" ng-repeat="servicioSoftware in $ctrl.serviciosSoftware">
+						<div class="ui tiny image middle aligned">
+							<!-- <img src="img/logo.png"> -->
+							<i class="icon disk outline huge circular"></i>
+						</div>
+						<div class="content">
+							<a class="Header">{{servicioSoftware.userId}}</a>
+							<div class="meta">
+								Aula: {{servicioSoftware.aula}}
+							</div>
+							<div class="description">
+								<p><b>{{servicioSoftware.tipo}}</b> del software: <b>{{servicioSoftware.nombreSoftware}}</b> en su versión <b>{{servicioSoftware.versionSoftware}}</b> </p>
+							</div>
+							<div class="extra">
+								<a href="#!/es/admin/notificaciones/servicio/software/{{servicioSoftware.idSolicitud}}">
+									<div class="ui right floated button teal">
+										Ver
+										<i class="icon right chevron"></i>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="ui tab" data-tab="internet">
+			Lista de solicitudes de servicio de Internet
+			</div>
+			<div class="ui tab" data-tab="cuentas_usuario">
+			Lista de solicitudes de cuentas de usuario
+			</div>
 </div>			

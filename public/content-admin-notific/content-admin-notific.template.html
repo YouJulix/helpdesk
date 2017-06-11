@@ -1,66 +1,39 @@
-				<div class="ui segment">
-					<h2 class="ui dividing header teal"><i class="icon newspaper"></i>Notificaciones</h2>					
-					<div style="height: 20px;"></div>
-					<div class="ui divided items">
-						<div class="item">
-							<div class="ui tiny image middle aligned">
-								<img src="assets/images/Xlogo.png">
-							</div>
-							<div class="content">
-								<a class="Header">Julio Andrés Padilla Cruz</a>
-								<div class="meta">
-									SOLICITUD DE CUENTA
-								</div>
-								<div class="description">
-									<p>Esta va a ser una descripción de la notificación</p>
-								</div>
-								<div class="extra">
-									<div class="ui right floated button teal">
-										Ver
-										<i class="icon right chevron"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="ui tiny image">
-								<img src="assets/images/Xlogo.png">
-							</div>
-							<div class="content">
-								<a class="Header">Julio Andrés Padilla Cruz</a>
-								<div class="meta">
-									REPORTE DE MOUSE DAÑADO
-								</div>
-								<div class="description">
-									<p>Esta va a ser una descripción de la notificación</p>
-								</div>
-								<div class="extra">
-									<button class="ui right floated button teal">
-										Ver
-										<i class="icon right chevron"></i>
-									</button>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="ui tiny image">
-								<img src="assets/images/Xlogo.png">
-							</div>
-							<div class="content">
-								<a class="Header">Julio Andrés Padilla Cruz</a>
-								<div class="meta">
-									SOLICITUD DE AULA
-								</div>
-								<div class="description">
-									<p>Esta va a ser una descripción de la notificación</p>
-								</div>
-								<div class="extra">
-									<div class="ui right floated button teal">
-										Ver
-										<i class="icon right chevron"></i>
-									</div>
-								</div>
-							</div>
-						</div>
+<div class="ui segment">
+	<h2 class="ui dividing header teal"><i class="icon newspaper"></i>Notificaciones</h2>	
+
+	<div class="ui top attached tabular large menu">
+		<a class="item active" data-tab="reportes"><i class="large icon edit"></i>Reportes <span class="ui label">{{$ctrl.totalReportes}}</span> </a>
+		<a class="item" data-tab="servicios"><i class="large icon configure"></i>Servicios <!-- <span class="ui label">1</span> --></a>
+	</div>
+
+	<div class="ui bottom attached active tab segment" data-tab="reportes">
+		<div class="ui divided items">			
+			<div class="item" ng-repeat="reporte in $ctrl.reportes">
+				<div class="ui tiny image middle aligned">
+					<img src="img/logo.png">
+				</div>
+				
+				<div class="content">
+					<a class="Header">{{reporte.userId}}</a>
+					<div class="meta">
+						Edificio: {{reporte.edificio}}
 					</div>
-				</div>			
+					<div class="description">
+						<p>Reporte de <b>{{reporte.equipo}}</b> con numero de inventario <b>{{reporte.numeroInventario}}</b></p>
+					</div>
+					<div class="extra">
+						<a href="#!/es/admin/notificaciones/reporte/{{reporte.idReporte}}">
+							<div class="ui right floated button teal">
+								Ver
+								<i class="icon right chevron"></i>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui bottom attached tab segment" data-tab="servicios">
+Lista de servicios
+	</div>					
+</div>			

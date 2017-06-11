@@ -8,10 +8,15 @@ exports.addAPIRouter = function(app, ReportCtrl){ //Siempre hay que utilizar el 
 		.get(ReportCtrl.findAllReports)
 		.post(ReportCtrl.addReport);
 		
-	reports.route('/reports/:user') 
-		.get(ReportCtrl.findReportsByUSer);
+	reports.route('/reports/:idReporte') 
+		.get(ReportCtrl.findReportById)
+		.put(ReportCtrl.updateReport)
+		.delete(ReportCtrl.deleteReport);
 
-	reports.route('/reports/:user/:')
+	/*reports.route('/reports/:user') 
+		.get(ReportCtrl.findReportsByUSer);*/
+
+	//reports.route('/reports/:user/:')//Comente esto porque parece NO USADO  EDDY
 	app.use("/api/v1.0", reports); //Usar en la ruta '/api/v1.0', las rutas/api definidas en el objeto  users
 }
 

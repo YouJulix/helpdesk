@@ -38,6 +38,7 @@ exports.addUser = function(req, res){
 
 	var user = new User({
 		email:		req.body.email,
+		name: 	req.body.name,
 		password:	req.body.password,
 		admin: 	req.body.admin
 	});

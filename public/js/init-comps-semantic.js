@@ -1,3 +1,6 @@
 function initCompsSemanticUI(){
-	$('.ui.dropdown').dropdown();	
+	$('.ui.dropdown').dropdown();
+	$('.menu .item')
+				  .tab()
+				;
 }

@@ -6,7 +6,15 @@ angular.
 				var self = this;
 
 				self.selectLink = function(submenu){
-					document.getElementById(submenu).className += " active"; //Es con un espacio para que el Navegador reconozca "active" como otro elemento de la lista de Clases de este elemento.
+					switch(submenu){
+						case 'notificaciones':
+							document.getElementById(submenu).className += " active"; //Es con un espacio para que el Navegador reconozca "active" como otro elemento de la lista de Clases de este elemento.		
+							break;
+						case 'faq':
+							document.getElementById(submenu).className += " active";
+							break;
+					}
+					
 				}
 				self.clearLocalStorage = function (){
 					localStorage.clear();

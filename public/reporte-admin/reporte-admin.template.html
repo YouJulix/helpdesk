@@ -1,0 +1,81 @@
+<barra-admin></barra-admin>
+<div class="main ui grid container stackable">
+		<div class="row">
+			<div class="column eleven wide ">
+				<div class="ui large form  segment">
+					<h2 class="ui dividing header teal"><i class="icon edit"></i>Reporte {{$ctrl.idReporte}}</h2>
+					<!-- Edificio y Equipo hechos con select
+					-->
+					<div class="ui segment">
+						Realizado por: {{$ctrl.reporte.userId}}	
+					</div>
+
+					<div class="field eight wide">
+						<label>Estado del Reporte:</label>
+						<select ng-model="$ctrl.reporte.estado">
+							<option>En Progreso</option>
+							<option>A destiempo</option>
+							<option>Atendido</option>
+							<option>Cancelado</option>
+						</select>
+					</div>
+
+					<div class="field eight wide">
+							<label>Edificio</label>
+							<select  value="edificio" ng-model="$ctrl.reporte.edificio" ng-init="Biblioteca"> <!-- class="ui search dropdown"> -->
+								<option value="Asistentes">Asistentes</option>
+								<option value="Aulas">Aulas</option>
+								<option value="Biblioteca">Biblioteca</option>
+								<option value="Profesores">Profesores</option>
+								<option value="Rectoría">Rectoría</option>
+								<option value="Sala de Transmisión">Sala de Transmisión</option>
+								<option value="Vicerectoría Académica">Vicerectoría Académica</option>
+								<option value="Vicerectoría Administrativa">Vicerectoría Administrativa</option>
+						</select>
+					</div>
+					<div class="field eight wide">
+						<label>Equipo</label>
+						<select ng-model="$ctrl.reporte.equipo" > <!-- class="ui search dropdown"-->
+							<option>Bocinas</option> <!--Si no le ponemos el atributo value, el valor que tomará será el texto que está dentro de la etiqueta option-->
+							<option>Cámara</option>
+							<option>Cañon</option>
+							<option>Contactos</option>
+							<option value="CPU">CPU</option>
+							<option>Lampara</option>
+							<option>Mesa</option>
+							<option value="">Monitor</option>
+							<option>Mouse</option>
+							<option>Silla</option>
+							<option>SMART</option>
+							<option>Teclado</option>
+						</select>
+					</div>
+
+					<div class="fields">
+						<div class="field eight wide required">
+							<label>Número de Inventario</label>
+							<input type="text" name="inventario" ng-model="$ctrl.reporte.numeroInventario">
+						</div>
+						<div class="field eight wide">
+							<label>Número de aula/cubículo</label>
+							<input type="text" name="num_aula" ng-model="$ctrl.reporte.numUbicacion">
+						</div>
+					</div>
+					<div class="field">
+						<label>Descripción del Problema</label>
+						<textarea rows="4" ng-model="$ctrl.reporte.descripcionProblema"></textarea>
+					</div>
+					<div class="field">
+						<label>Solución del problema</label>
+						<textarea rows="4" ng-model="$ctrl.reporte.solucionProblema"></textarea>
+					</div>
+					<a href="#!/es/admin/notificaciones"><button class="ui button" type="submit"><i class="icon arrow left"></i>Regresar</button></a>
+					<button class="ui button green" type="submit" ng-click="$ctrl.updateReporte()"><i class="icon save"></i>Guardar</button>
+					<button class="ui button red" type="submit" ng-click="$ctrl.deleteReporte()"><i class="icon delete"></i>Eliminar</button>
+				</div>
+			</div>
+			<div class="column five wide">
+				Contactos, componente de eddy
+			</div>
+		</div>
+</div>

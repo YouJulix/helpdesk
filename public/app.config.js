@@ -68,6 +68,15 @@ angular.
 						}
 					}
 				}).
+				when('/:lang/admin/notificaciones/reporte/:idReporte', {
+					template : function(urlAttr){
+						if(localStorage.getItem("admin") == "true"){//Si un administrador está logueado e intenta entrar a una seccion de un usuario NO administrador
+							return '<reporte-admin></reporte-admin>';
+						}else{
+							window.location = "#!/" + urlAttr.lang + "/login";	
+						}
+					}
+				}).
 				otherwise('/es/login');
 			}
 		]);

@@ -6,5 +6,6 @@ angular.module('helpDeskApp',[
 	'contentBienvenido',
 	'barraAdmin',
 	'seccionAdminNotific',
-	'contentAdminNotific'
+	'contentAdminNotific',
+	'reporteAdmin'
 	]);

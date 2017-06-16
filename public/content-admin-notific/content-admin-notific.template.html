@@ -3,7 +3,7 @@
 
 	<div class="ui top attached tabular large menu">
 		<a class="item active" data-tab="reportes"><i class="large icon edit"></i>Reportes <span class="ui label">{{$ctrl.totalReportes}}</span> </a>
-		<a class="item" data-tab="servicios"><i class="large icon configure"></i>Servicios <!-- <span class="ui label">1</span> --></a>
+		<a class="item" data-tab="servicios"><i class="large icon configure"></i>Servicios <span class="ui label">{{$ctrl.totalServicios}}</span><!-- <span class="ui label">1</span> --></a>
 	</div>
 
 	<div class="ui bottom attached active tab segment" data-tab="reportes">
@@ -16,6 +16,7 @@
 				<div class="content">
 					<a class="Header">{{reporte.userId}}</a>
 					<div class="meta">
+						{{reporte.fecha}} <br>
 						Edificio: {{reporte.edificio}}
 					</div>
 					<div class="description">

@@ -1,27 +1,89 @@
 <div class="ui segment">
-	<h2 class="ui dividing header teal"><i class="icon edit"></i>Reportes de fallas</h2>
+	<h2 class="ui dividing header teal"><i class="icon edit"></i>{{$ctrl.failReports}}</h2>
 	<div class="ui grid">
 		<div class="row">
 			<div class="sixteen wide column">
-				<a href="user.html"><button class="ui button"><i class="icon add circle"></i>Agregar reporte</button></a>
+				<!-- Inicio del modal -->
+				<div class="ui united modal" id="modal1">
+				<form ng-submit="$ctrl.saveReport()">
+					<div class="ui large form segment" >
+						<h2 class="ui dividing header teal"><i class="icon edit"></i>{{$ctrl.addReport}}</h2>
+						<div class="field eight wide">
+							<label>{{$ctrl.location}}</label>
+							<select ng-model="$ctrl.edificio" required>
+								<option>{{$ctrl.classRoom}}</option>
+								<option>{{$ctrl.assist}}</option>
+								<option>{{$ctrl.library}}</option>
+								<option>{{$ctrl.teachers}}</option>
+								<option>{{$ctrl.rectory}}</option>
+								<option>{{$ctrl.roomTransmit}}</option>
+								<option>{{$ctrl.viceRectoryA}}</option>
+								<option>{{$ctrl.viceRectoryM}}</option>
+							</select>
+						</div>
+
+						<div class="field eight wide">
+							<label>{{$ctrl.equipment}}</label>
+							<select ng-model="$ctrl.equipo" required>
+								<option>{{$ctrl.speaker}}</option>
+								<option>{{$ctrl.camera}}</option>
+								<option>{{$ctrl.proy}}</option>
+								<option>{{$ctrl.contacts}}</option>
+								<option >{{$ctrl.cpu}}</option>
+								<option>{{$ctrl.lamp}}</option>
+								<option>{{$ctrl.table}}</option>
+								<option>Monitor</option>
+								<option>Mouse</option>
+								<option>{{$ctrl.chair}}</option>
+								<option>SMART</option>
+								<option>{{$ctrl.keyboard}}</option>
+							</select>
+						</div>
+
+						<div class="fields">
+							<div class="field eight wide ">
+								<label>{{$ctrl.inventary}}</label>
+								<input ng-model="$ctrl.inventario" type="text" name="inventario">
+							</div>
+							<div class="field eight wide required">
+								<label>{{$ctrl.OfficeCub}}</label>
+								<input ng-model="$ctrl.ubicacion" type="number" name="num_aula" required>
+							</div>
+						</div>
+
+						<div class="field required">
+							<label>{{$ctrl.description}}</label>
+							<textarea ng-model="$ctrl.descripcion" rows="4" required></textarea>
+						</div>
+						<button class="ui button teal" >{{$ctrl.send}}</button>
+
+					</div>
+				</form>
+				</div>
+				<!-- Fin del modal -->
+				<button data-modal="modal1" id="call-modals" class="ui button"><i class="icon add circle"></i>{{$ctrl.addReport}}</button>
+				<!--<a href="user.html"><button class="ui button"><i class="icon add circle"></i>{{$ctrl.failReports}}</button></a>-->
 			</div>
 		</div>
 	</div>
 	<table class="ui celled table">
 		<thead>
 			<tr>
-				<th>Código</th>
-				<th>Fecha</th>
-				<th>Tipo</th>
-				<th>Estado</th>
+				<th>{{$ctrl.code}}</th>
+				<th>{{$ctrl.date}}</th>
+				<th>{{$ctrl.equipment}}</th>
+				<th>{{$ctrl.status}}</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>001-800-NOV21</td>
-				<td>24-Abr-2016 8:09am</td>
-				<td>Descarga de Software</td>
-				<td><button class="ui button green fluid">Atendido</button></td>
+			<tr ng-repeat = "report in $ctrl.reports">
+				<td>{{report.idReporte}}</td>
+				<td>{{report.fecha}}</td>
+				<td>{{report.equipo}}</td>
+				<td ng-if="report.estado == 'En Progreso'"><button class="ui button blue fluid">{{report.estado}}</button></td>
+				<td ng-if="report.estado == 'Atendido'"><button class="ui button green fluid">{{report.estado}}</button></td>
+				<td ng-if="report.estado == 'A destiempo'"><button class="ui button yellow fluid">{{report.estado}}</button></td>
+				<td ng-if="report.estado == 'Cancelado'"><button class="ui button red fluid">{{report.estado}}</button></td>
 			</tr>
 		</tbody>
 	</table>

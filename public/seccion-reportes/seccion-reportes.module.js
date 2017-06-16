@@ -1,5 +1,6 @@
 angular.module('seccionReportes',[
 	'ngRoute',
 	'barraPrincipal',
-	'barraContactos'
+	'barraContactos',
+	'chat'
 	]);

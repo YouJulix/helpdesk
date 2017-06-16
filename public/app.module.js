@@ -11,5 +11,10 @@ angular.module('helpDeskApp',[
 	'seccionBusqueda',
 	'servicioSoftwareAdmin',
 	'contentReportes',
-	'seccionReportes'
+	'seccionReportes',
+	'barraFooter',
+	'seccionServicios',
+	'contentServicios',
+	'chat',
+	'chatAdmin'
 	]);

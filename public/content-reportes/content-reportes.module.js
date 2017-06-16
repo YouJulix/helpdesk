@@ -1,3 +1,4 @@
 angular.module('contentReportes', [
-	'ngRoute'
+	'ngRoute',
+	'barraPrincipal'
 	]);

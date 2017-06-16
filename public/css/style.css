@@ -1,5 +1,5 @@
 body{
-	background-color: rgb(240,240,240);
+	background-color: rgb(250,250,250);
 }
 .ui.menu .item img.logo {
 	margin-right: 1.5em;
@@ -13,3 +13,365 @@ div.icon-flat h3, div.icon-flat a{
  .main.container {
     margin-top: 5.5em;
   }
+
+/*CHAT*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: #191919;
+  font-family: "Lato";
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+chat .cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.show-me {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transform: translate3d(-300px, 0, 0);
+          transform: translate3d(-300px, 0, 0);
+}
+
+chat .title {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: white;
+  height: 100px;
+  text-align: center;
+  font-size: 8vw;
+  font-weight: 600;
+}
+
+chat .button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: "Lato";
+  -webkit-appearance: none;
+  font-size: 1rem;
+  line-height: 1.2;
+  border-radius: 3px;
+  border: 3px solid #343436;
+  background: #343436;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-decoration: none !important;
+  cursor: pointer;
+  text-align: center;
+  font-weight: normal;
+  padding: 10px 16px;
+  padding-left: 30px;
+  outline: 0;
+}
+
+chat .button:before {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  bottom: 0;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  background: #53DD6C;
+  content: "";
+  border-radius: 100px;
+}
+chat .button:hover {
+  background: #4d4d50;
+}
+chat .button:active {
+  bottom: 17px;
+}
+
+chat .chat {
+  position: absolute;
+  background: #28282B;
+  top: 0;
+  right: -300px;
+  height: 100%;
+  width: 300px;
+}
+
+chat .chat__human {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+chat .chat__human:nth-child(odd) {
+  background: #232326;
+}
+chat .chat__human:hover {
+  background: #0c0c0c;
+}
+chat .chat__human > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+chat .chat__avatar {
+  width: 40px;
+  background: #fff;
+  border-radius: 100px;
+  margin-right: 20px;
+}
+
+chat .chat__users {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  font-weight: 100;
+  color: #ccc;
+  padding: 10px 20px;
+  background: black;
+}
+chat .conversation {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 200px;
+  width: 300px;
+  height: 350px;
+  background: black;
+}
+
+chat .conversation__header {
+  color: #ccc;
+  padding: 15px 10px;
+  background: #343436;
+  border-top: 2px solid #FEDD31;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+chat .conversation__msg {
+  padding: 5px 10px;
+  color: white;
+  list-style-type: none;
+  font-size: 12px;
+}
+chat .conversation__msg span {
+  background: white;
+  color: black;
+  display: table;
+  padding: 10px 20px;
+  border-radius: 100px;
+  float: left;
+}
+
+chat .right {
+  float: right !important;
+  background: #0ebeff !important;
+  color: white !important;
+}
+
+chat .input {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: #0a0a0a;
+  border: 0;
+  outline: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: white;
+}
+chat .input:focus {
+  background: #121212;
+}
+
+chat .close-msg {
+  float: right;
+  font-size: 20px;
+  margin-top: -4px;
+}
+
+/*Estilo de admin, TEMPORAL porque en sí será el mismo que el del usuario NO admin*/
+chat-admin .title {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: white;
+  height: 100px;
+  text-align: center;
+  font-size: 8vw;
+  font-weight: 600;
+}
+
+chat-admin .button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: "Lato";
+  -webkit-appearance: none;
+  font-size: 1rem;
+  line-height: 1.2;
+  border-radius: 3px;
+  border: 3px solid #343436;
+  background: #343436;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-decoration: none !important;
+  cursor: pointer;
+  text-align: center;
+  font-weight: normal;
+  padding: 10px 16px;
+  padding-left: 30px;
+  outline: 0;
+}
+
+chat-admin .button:before {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  bottom: 0;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  background: #53DD6C;
+  content: "";
+  border-radius: 100px;
+}
+chat-admin .button:hover {
+  background: #4d4d50;
+}
+chat-admin .button:active {
+  bottom: 17px;
+}
+
+chat-admin .chat{
+  position: absolute;
+  background: #28282B;
+  top: 0;
+  right: -300px;
+  height: 100%;
+  width: 300px;
+}
+
+chat-admin .chat__human {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+chat-admin .chat__human:nth-child(odd) {
+  background: #232326;
+}
+chat-admin .chat__human:hover {
+  background: #0c0c0c;
+}
+chat-admin .chat__human > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+chat-admin .chat__avatar {
+  width: 40px;
+  background: #fff;
+  border-radius: 100px;
+  margin-right: 20px;
+}
+
+chat-admin .chat__users {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  font-weight: 100;
+  color: #ccc;
+  padding: 10px 20px;
+  background: black;
+}
+chat-admin .conversation {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 200px;
+  width: 300px;
+  height: 350px;
+  background: black;
+}
+
+chat-admin .conversation__header {
+  color: #ccc;
+  padding: 15px 10px;
+  background: #343436;
+  border-top: 2px solid #FEDD31;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+chat-admin .conversation__msg {
+  padding: 5px 10px;
+  color: white;
+  list-style-type: none;
+  font-size: 12px;
+}
+chat-admin .conversation__msg span {
+  background: white;
+  color: black;
+  display: table;
+  padding: 10px 20px;
+  border-radius: 100px;
+  float: left;
+}
+
+chat-admin .right {
+  float: right !important;
+  background: #0ebeff !important;
+  color: white !important;
+}
+
+chat-admin .input {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: #0a0a0a;
+  border: 0;
+  outline: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: white;
+}
+chat-admin .input:focus {
+  background: #121212;
+}
+
+chat-admin .close-msg {
+  float: right;
+  font-size: 20px;
+  margin-top: -4px;
+}

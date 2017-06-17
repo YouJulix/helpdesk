@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+=======
+<div class="ui segment">
+	<h2 class="ui dividing header teal"><i class="icon {{$ctrl.main_icon}}"></i>{{$ctrl.main_title}}</h2>
+	<div class="ui three column divided grid left aligned stackable">
+		<div class="row">
+			<div class="column" ng-repeat="section in $ctrl.sections"> <!-- section va sin prefijo $ctrl., porque será una variable local del ámbito ng-repeat, Aunque la descarga del json(el que trae el diccionario) tarde el two-binding hará que cuando el controlador se descargue(Y se asigne), se actualice la vista -->
+				<div class="icon-flat">
+					<h3>{{section.title}}</h3>
+					<a href="#!/{{$ctrl.lang}}/{{section.link}}"><i class="circular icon {{section.icon}} massive link teal" ></i></a>
+				</div>
+				 <!-- <p>{{section.description}}</p> //Si hago directamente esto: imprime un String(El navegador no lo procesa como HTML)-->
+				<p ng-bind-html="section.description"></p> <!-- Esta directiva(ng-bind-html) viene dentro del modulo angular-sanitize.js (Se debe incluir como dependencia en nuestro modulo actual a 'ngSanitize') // Y lo que hace es convertir la variable enlazada(String) a un HTML válido y que el navegador lo pueda dibujar-->
+			</div>
+		</div>
+	</div>
+</div>
+>>>>>>> ba06195018637b2e555e0412d61ba0da6a04cd50
 
 <div class="ui segment">
 				<h2 class="ui dividing header teal"><i class="icon configure"></i>Solicitar Servicio</h2>

@@ -28,7 +28,6 @@ angular.
 				}).error(function(){
 					alert("Error recuperando servicios de software");
 				});
-
 				initCompsSemanticUI();
 			}]
 		});

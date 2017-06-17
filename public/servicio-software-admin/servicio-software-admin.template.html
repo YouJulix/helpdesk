@@ -1,111 +1,113 @@
 <barra-admin></barra-admin>
 <div class="main ui grid container stackable">
-		<div class="row">
-			<div class="column eleven wide ">
-				<div class="ui large form  segment">
-					<h2 class="ui dividing header teal"><i class="icon configure"></i>Servicio Software {{$ctrl.servicioSoftware.idSolicitud}}</h2>
-					<div class="ui pointing secondary menu">
-							<a class="item active" data-tab="instalacion_software" ng-click="$ctrl.servicioSoftware.tipo = 'Instalación'"><i class="large icon disk outline"></i>Instalación de Software</a>
-							<a class="item" data-tab="descarga_software" ng-click="$ctrl.servicioSoftware.tipo = 'Descarga'"><i class="large icon download"></i>Descarga de Software</a>
-					</div>
-					<div class="ui active tab" data-tab="instalacion_software">
-						<div class="ui large form segment">
-							<!-- <h3 class="ui dividing header blue">Instalación de Software</h3> -->
-							<!-- <div class="inline fields"> -->
-							<div class="ui segment">
-								Realizado por: {{$ctrl.servicioSoftware.userId}}	
-							</div>
-
-							<div class="field ten wide">
-								<label>Estado del Reporte:</label>
-								<select ng-model="$ctrl.servicioSoftware.estado">
-									<option>En Progreso</option>
-									<option>A destiempo</option>
-									<option>Atendido</option>
-									<option>Cancelado</option>
-								</select>
-							</div>
-								<div class="eight wide field">
-									<label>Nombre del Software</label>
-									<input type="text" name="nombre_software" ng-model="$ctrl.servicioSoftware.nombreSoftware"> <!--Nota al usar Angular y su directiva ng-model, el atributo name del inut se vuelve obsoleto-->
-								</div>
-							<!-- </div> -->
-							<!-- <div class="inline fields"> -->
-								<div class="eight wide field">
-									<label>Versión del Software</label>
-									<input type="text" name="version_software" ng-model="$ctrl.servicioSoftware.versionSoftware">
-								</div>
-							<!-- </div> -->
-							<div class="eight wide field">
-								<label>Número de equipos</label>
-								<input type="number" name="num_equipos" ng-model="$ctrl.servicioSoftware.numeroEquipos">
-							</div>
-							<div class="eight wide field">
-								<label>Aula</label>
-								<input type="text" name="num_aula" ng-model="$ctrl.servicioSoftware.aula">
-							</div>
-							<div class="eight wide field">
-								<label>Materia</label>
-								<input type="text" name="materia" ng-model="$ctrl.servicioSoftware.materia">
-							</div>
-							<div class="eight wide field">
-								<label>Fecha límite</label>
-								<input type="date" name="fecha_limite" ng-model="$ctrl.servicioSoftware.fechaFinal">
-							</div>
-							<div class="field">
-								<label >Comentarios</label>
-								<textarea rows="4" ng-model="$ctrl.servicioSoftware.comentarios"></textarea>
-							</div>
-							<div class="field">
-								<label>Respuesta al servicio</label>
-								<textarea rows="4" ng-model="$ctrl.servicioSoftware.solucion"></textarea>
-							</div>
-							<a href="#!/es/admin/notificaciones"><button class="ui button" type="submit"><i class="icon arrow left"></i>Regresar</button></a>
-							<button class="ui button green" type="submit" ng-click="$ctrl.updateServSoftw()"><i class="icon save"></i>Guardar</button>
-							<button class="ui button red" type="submit" ng-click="$ctrl.deleteServSoftw()"><i class="icon delete"></i>Eliminar</button>
+	<div class="row">
+		<div class="column eleven wide ">
+			<div class="ui large form  segment">
+				<h2 class="ui dividing header teal"><i class="icon configure"></i>Servicio Software {{$ctrl.servicioSoftware.idSolicitud}}</h2>
+				<div class="ui pointing secondary menu">
+						<a class="item active" data-tab="instalacion_software" ng-click="$ctrl.servicioSoftware.tipo = 'Instalación'"><i class="large icon disk outline"></i>Instalación de Software</a>
+						<a class="item" data-tab="descarga_software" ng-click="$ctrl.servicioSoftware.tipo = 'Descarga'"><i class="large icon download"></i>Descarga de Software</a>
+				</div>
+				<div class="ui active tab" data-tab="instalacion_software">
+					<div class="ui large form segment">
+						<!-- <h3 class="ui dividing header blue">Instalación de Software</h3> -->
+						<!-- <div class="inline fields"> -->
+						<div class="ui segment">
+							Realizado por: {{$ctrl.servicioSoftware.userId}}	
 						</div>
-					</div>
-					<div class="ui tab" data-tab="descarga_software">
-						<div class="ui large form segment">
-							<div class="ui segment">
-								Realizado por: {{$ctrl.servicioSoftware.userId}}	
-							</div>
 
-							<div class="field ten wide">
-								<label>Estado del Reporte:</label>
-								<select ng-model="$ctrl.servicioSoftware.estado">
-									<option>En Progreso</option>
-									<option>A destiempo</option>
-									<option>Atendido</option>
-									<option>Cancelado</option>
-								</select>
-							</div>
+						<div class="field ten wide">
+							<label>Estado del Reporte:</label>
+							<select ng-model="$ctrl.servicioSoftware.estado">
+								<option>En Progreso</option>
+								<option>A destiempo</option>
+								<option>Atendido</option>
+								<option>Cancelado</option>
+							</select>
+						</div>
 							<div class="eight wide field">
 								<label>Nombre del Software</label>
-								<input type="text" name="nombre_software" ng-model="$ctrl.servicioSoftware.nombreSoftware">
+								<input type="text" name="nombre_software" ng-model="$ctrl.servicioSoftware.nombreSoftware"> <!--Nota al usar Angular y su directiva ng-model, el atributo name del inut se vuelve obsoleto-->
 							</div>
+						<!-- </div> -->
+						<!-- <div class="inline fields"> -->
 							<div class="eight wide field">
 								<label>Versión del Software</label>
 								<input type="text" name="version_software" ng-model="$ctrl.servicioSoftware.versionSoftware">
 							</div>
-							<div class="eight wide field">
-								<label>Fecha límite</label>
-								<input type="date" ng-model="$ctrl.servicioSoftware.fechaFinal">
-							</div>
-							<div class="field">
-								<label>Comentarios</label>
-								<textarea rows="4" ng-model="$ctrl.servicioSoftware.comentarios"></textarea>
-							</div>
-							<div class="field">
-								<label>Respuesta al servicio</label>
-								<textarea rows="4" ng-model="$ctrl.servicioSoftware.solucion"></textarea>
-							</div>
-							<a href="#!/es/admin/notificaciones"><button class="ui button" type="submit"><i class="icon arrow left"></i>Regresar</button></a>
-							<button class="ui button green" type="submit" ng-click="$ctrl.updateServSoftw()"><i class="icon save"></i>Guardar</button>
-							<button class="ui button red" type="submit" ng-click="$ctrl.deleteServSoftw()"><i class="icon delete"></i>Eliminar</button>
+						<!-- </div> -->
+						<div class="eight wide field">
+							<label>Número de equipos</label>
+							<input type="number" name="num_equipos" ng-model="$ctrl.servicioSoftware.numeroEquipos">
 						</div>
+						<div class="eight wide field">
+							<label>Aula</label>
+							<input type="text" name="num_aula" ng-model="$ctrl.servicioSoftware.aula">
+						</div>
+						<div class="eight wide field">
+							<label>Materia</label>
+							<input type="text" name="materia" ng-model="$ctrl.servicioSoftware.materia">
+						</div>
+						<div class="eight wide field">
+							<label>Fecha límite</label>
+							<input type="date" name="fecha_limite" ng-model="$ctrl.servicioSoftware.fechaFinal">
+						</div>
+						<div class="field">
+							<label >Comentarios</label>
+							<textarea rows="4" ng-model="$ctrl.servicioSoftware.comentarios"></textarea>
+						</div>
+						<div class="field">
+							<label>Respuesta al servicio</label>
+							<textarea rows="4" ng-model="$ctrl.servicioSoftware.solucion"></textarea>
+						</div>
+						<a href="#!/es/admin/notificaciones"><button class="ui button" type="submit"><i class="icon arrow left"></i>Regresar</button></a>
+						<button class="ui button green" type="submit" ng-click="$ctrl.updateServSoftw()"><i class="icon save"></i>Guardar</button>
+						<button class="ui button red" type="submit" ng-click="$ctrl.deleteServSoftw()"><i class="icon delete"></i>Eliminar</button>
+					</div>
+				</div>
+				<div class="ui tab" data-tab="descarga_software">
+					<div class="ui large form segment">
+						<div class="ui segment">
+							Realizado por: {{$ctrl.servicioSoftware.userId}}	
+						</div>
+
+						<div class="field ten wide">
+							<label>Estado del Reporte:</label>
+							<select ng-model="$ctrl.servicioSoftware.estado">
+								<option>En Progreso</option>
+								<option>A destiempo</option>
+								<option>Atendido</option>
+								<option>Cancelado</option>
+							</select>
+						</div>
+						<div class="eight wide field">
+							<label>Nombre del Software</label>
+							<input type="text" name="nombre_software" ng-model="$ctrl.servicioSoftware.nombreSoftware">
+						</div>
+						<div class="eight wide field">
+							<label>Versión del Software</label>
+							<input type="text" name="version_software" ng-model="$ctrl.servicioSoftware.versionSoftware">
+						</div>
+						<div class="eight wide field">
+							<label>Fecha límite</label>
+							<input type="date" ng-model="$ctrl.servicioSoftware.fechaFinal">
+						</div>
+						<div class="field">
+							<label>Comentarios</label>
+							<textarea rows="4" ng-model="$ctrl.servicioSoftware.comentarios"></textarea>
+						</div>
+						<div class="field">
+							<label>Respuesta al servicio</label>
+							<textarea rows="4" ng-model="$ctrl.servicioSoftware.solucion"></textarea>
+						</div>
+						<a href="#!/es/admin/notificaciones"><button class="ui button" type="submit"><i class="icon arrow left"></i>Regresar</button></a>
+						<button class="ui button green" type="submit" ng-click="$ctrl.updateServSoftw()"><i class="icon save"></i>Guardar</button>
+						<button class="ui button red" type="submit" ng-click="$ctrl.deleteServSoftw()"><i class="icon delete"></i>Eliminar</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
+
+<chat-admin></chat-admin>

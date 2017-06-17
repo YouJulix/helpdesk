@@ -1,1 +1,1 @@
-angular.module('barraContactos', ['ngRoute']);
+angular.module('barraContactos', ['ngRoute', 'chat']);

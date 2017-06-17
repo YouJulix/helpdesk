@@ -15,7 +15,7 @@
 			"link" : "servicios"
 		},
 		{
-			"title" : "Frequent Questions and Answers",
+			"title" : "FAQ's",
 			"icon"  :  "help circle outline",
 			"description" : "<br>See the section for <b>tutorials</b>, and <b>solutions</b> of the most common problems.",
 			"link" : "faq"

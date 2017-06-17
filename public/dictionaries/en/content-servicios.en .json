@@ -1,0 +1,24 @@
+{
+	"main_title" : "Services",
+	"main_icon" : "home",
+	"sections" : [
+		{
+			"title" : "Software",
+			"icon"  :  "edit",
+			"description" : " ",
+			"link" : " "
+		},
+		{
+			"title" : "Internet",
+			"icon"  :  "configure",
+			"description" : " ",
+			"link" : "servicios"
+		},
+		{
+			"title" : "Counts",
+			"icon"  :  "help circle outline",
+			"description" : " ",
+			"link" : " "
+		}
+	]
+}

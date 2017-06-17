@@ -7,7 +7,8 @@
 					<!-- Edificio y Equipo hechos con select
 					-->
 					<div class="ui segment">
-						Realizado por: {{$ctrl.reporte.userId}}	
+						Realizado por: <b>{{$ctrl.reporte.userId}}</b><br>
+						El día: {{$ctrl.reporte.fecha}}
 					</div>
 
 					<div class="field eight wide">
@@ -75,7 +76,9 @@
 				</div>
 			</div>
 			<div class="column five wide">
-				Contactos, componente de eddy
+				<barra-contactos></barra-contactos>
 			</div>
 		</div>
 </div>
+<barra-footer></barra-footer>
+<chat-admin></chat-admin>

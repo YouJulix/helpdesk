@@ -1,0 +1,200 @@
+
+<div class="ui segment">
+				<h2 class="ui dividing header teal"><i class="icon configure"></i>Solicitar Servicio</h2>
+				<div class="ui top attached tabular large menu">
+					<!-- <div class="ui pointing secondary large menu"> -->
+					<a class="item active" data-tab="software"><i class="large icon database"></i>Software</a>
+					<a class="item" data-tab="acceso_internet"><i class="large icon world"></i>Internet</a>
+					<a class="item" data-tab="cuentas_usuario"><i class="large icon users"></i>Cuentas de Usuario</a>
+				</div>
+				<div class="ui bottom attached active tab segment" data-tab="software">
+					<div class="ui pointing secondary menu">
+						<a class="item active" data-tab="instalacion_software"><i class="large icon disk outline"></i>Instalación de Software</a>
+						<a class="item" data-tab="descarga_software"><i class="large icon download"></i>Descarga de Software</a>
+					</div>
+					<div class="ui active tab" data-tab="instalacion_software">
+						<div class="ui large form segment">
+							<div class="eight wide field">
+								<label>Nombre del Software</label>
+								<input type="text" name="nombre_software">
+							</div>
+							<div class="eight wide field">
+								<label>Versión del Software</label>
+								<input type="text" name="version_software">
+							</div>
+							<div class="eight wide field">
+								<label>Número de equipos</label>
+								<input type="number" name="num_equipos">
+							</div>
+							<div class="eight wide field">
+								<label>Aula</label>
+								<input type="text" name="num_aula">
+							</div>
+							<div class="eight wide field">
+								<label>Materia</label>
+								<input type="text" name="materia">
+							</div>
+							<div class="eight wide field">
+								<label>Fecha límite</label>
+								<input type="date" name="fecha_limite">
+							</div>
+							<div class="field">
+								<label>Comentarios</label>
+								<textarea rows="4"></textarea>
+							</div>
+							<button class="ui button blue" type="submit">Enviar</button>
+						</div>
+					</div>
+					<div class="ui tab" data-tab="descarga_software">
+						<div class="ui large form segment">
+							<div class="eight wide field">
+								<label>Nombre del Software</label>
+								<input type="text" name="nombre_software">
+							</div>
+							<div class="eight wide field">
+								<label>Versión del Software</label>
+								<input type="text" name="version_software">
+							</div>
+							<div class="eight wide field">
+								<label>Fecha límite</label>
+								<input type="date" name="fecha_limite">
+							</div>
+							<div class="field">
+								<label>Comentarios</label>
+								<textarea rows="4"></textarea>
+							</div>
+							<button class="ui button blue" type="submit">Enviar</button>
+						</div>
+					</div>
+				</div>
+					
+				<div class="ui bottom attached tab segment" data-tab="acceso_internet">
+					<div class="ui pointing secondary menu">
+						<a class="item active" data-tab="equipo_externo"><i class="large icon laptop"></i>Equipo Externo</a>
+						<a class="item" data-tab="equipo_interno"><i class="large icon desktop"></i>Equipo Interno</a>
+					</div>
+					<div class="ui active tab segment" data-tab="equipo_externo">
+						<div class="ui large form">
+							<div class="eight wide field">
+								<label>Dirección MAC</label>
+								<input type="text" name="mac_addres">
+							</div>
+							<div class="field">
+								<label>Lugar de conexión</label>
+								<div class="fields">
+									<div class="six wide field">
+										<div class="grouped fields">
+											<div class="field">
+												<div class="ui radio checkbox">
+													<input type="radio" name="lugar_conexion">
+													<label>Aulas</label>
+												</div>
+											</div>
+											<div class="field">
+												<div class="ui radio checkbox">
+													<input type="radio" name="lugar_conexion">
+													<label>Biblioteca</label>
+												</div>
+											</div>
+											<div class="field">
+												<div class="ui radio checkbox">
+													<input type="radio" name="lugar_conexion">
+													<label>Edificio de asistentes</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="six wide field">
+										<div class="grouped fields">
+											<div class="field">
+												<div class="ui radio checkbox">
+													<input type="radio" name="lugar_conexion">
+													<label>Edificio de Profesores</label>
+												</div>
+											</div>
+											<div class="field">
+												<div class="ui radio checkbox">
+													<input type="radio" name="lugar_conexion">
+													<label>Laboratorio de Electrónica</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ui tab segment" data-tab="equipo_interno">
+						<div class="ui large form">
+							<div class="field eight wide">
+								<label>Aula</label>
+								<input type="text" name="aula">
+							</div>
+							<div class="field eight wide">
+								<label>Fecha de termino</label>
+								<input type="text" name="fecha">
+							</div>
+							<div class="field eight wide">
+								<label>Hora de Inicio</label>
+								<input type="text" name="hora_inicio">
+							</div>
+							<div class="field eight wide">
+								<label>Hora de termino</label>
+								<input type="text" name="hora_termino">
+							</div>
+							<div class="field">
+								<label>Sitios(URL) de acceso</label>
+								<textarea rows="2"></textarea>
+							</div>
+						</div>
+					</div>
+					<button class="ui button blue">Enviar</button>
+				</div>
+				<div class="ui bottom attached tab segment" data-tab="cuentas_usuario">
+					<div class="ui large form  segment">
+						<div class="field">
+							<label>Plataforma</label>
+							<div class="grouped fields">
+								<div class="field">
+									<div class="ui radio checkbox">
+										<input type="radio" name="plataforma">
+										<label>Aula Virtual</label>
+									</div>
+								</div>
+								<div class="field">
+									<div class="ui radio checkbox">
+										<input type="radio" name="plataforma">
+										<label>Kabl</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="field">
+							<label>Actividad</label>
+							<div class="grouped fields">
+								<div class="field">
+									<div class="ui radio checkbox">
+										<input type="radio" name="actividad">
+										<label>Solicitar acceso a la plataforma</label>
+									</div>
+								</div>
+								<div class="field">
+									<div class="ui radio checkbox">
+										<input type="radio" name="actividad">
+										<label>Restablecer contraseña</label>
+									</div>
+								</div>
+							</div>
+						</div>					
+						<div class="field">
+							<label>Descripción del Problema</label>
+							<textarea rows="4"></textarea>
+						</div>
+						<button class="ui button blue" type="submit">Enviar</button>
+					</div>
+				</div>
+			</div>
+
+
+
+

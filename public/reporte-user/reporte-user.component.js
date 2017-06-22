@@ -11,8 +11,49 @@ angular.
 				self.usage = true;
 				self.edit = false;
 				self.idReporte = localStorage.getItem("idReporte");
-				console.log("idReporte");
-				
+				self.changeLanguage = function(lang, section){
+						if(lang == "es" || lang == "en"){ //Se se ingreso un lenguaje permitido
+							//if(section == "welcome" || section == "bienvenido" || section == "reportes" || section == "reports" || section == "servicios" || section == "services" || section == "faq" || section == "busqueda" || section == "search"){//Secciones permitidas
+							$http({ 
+								method: 'GET',
+								url: 'dictionaries/' + lang + '/content-reportedit.' + lang + ".json"
+							}).success(function(data){
+								console.log(data);
+								self.nreport  	= data.report;
+								self.nfrom		= data.from;
+								self.nstatus	= data.satatus;
+								self.nlocation	= data.location;
+								self.nassit		= data.assist;
+								self.nclass		= data.OfficeCub;
+								self.nlib		= data.library;
+								self.nteacher	= data.teachers;
+								self.nrectory	= data.rectory;
+								self.nroomt		= data.roomTransmit;
+								self.nvica		= data.viceRectoryA
+								self.nvicm		= data.viceRectoryM;
+								self.nequipment	= data.equipment;
+								self.nspeak		= data.speaker;
+								self.ncamera	= data.camera;
+								self.nproject	= data.proy;
+								self.ncontacts  = data.contacts;
+								self.nlamp		= data.lamp;
+								self.ntable		= data.table;
+								self.nchair		= data.chair;
+								self.nkeyboard	= data.keyboard;
+								self.ninventary	= data.ninventary;
+								self.noffice	= data.OfficeCub;
+								self.ndescription 	= data.description;
+								self.nresponse		= data.response;
+								self.nback			= data.back;
+								self.nedit 			= data.edit; 
+								self.nsave			= data.save;
+								self.ndelete		= data.delete;
+							}).error(function(err){
+								alert("Hubo un error en recuperar ellenguaje");
+							});	
+						}
+					}
+
 				$http({
 					method : 'GET',
 					url : 'http://localhost:8000/api/v1.0/reports/' + self.idReporte
@@ -66,5 +107,6 @@ angular.
 				}
 
 				initCompsSemanticUI();
+				self.changeLanguage(self.lang, self.section);
 			}]
 		});

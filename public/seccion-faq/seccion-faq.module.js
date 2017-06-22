@@ -1,6 +1,5 @@
-angular.module('seccionBienvenido', [
+angular.module('seccionFaq', [
 	'ngRoute',
 	'barraPrincipal',
-	'contentFaqBienvenido',
 	'barraContactos'
 	]);

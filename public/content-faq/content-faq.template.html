@@ -1,0 +1,24 @@
+<div class="ui segment">
+    <h2 class="ui dividing header teal"><i class="icon info circle"></i>
+    	{{$ctrl.faqslang}}
+    </h2>
+		<div style="height: 20px;">
+        </div>
+		
+        <div ng-repeat=" faq in $ctrl.faqs track by $index" class="ui styled fluid accordion">
+			<div class="title">
+	    		<i class="dropdown icon"></i>
+	    		{{faq.title}}
+		  	</div>
+			
+			<div class="content">
+		    	<p>{{faq.content}}</p>
+		  	</div>
+
+		  	<div ng-if="$last == $index">
+		  		<script type="text/javascript">
+		  			$('.ui.accordion').accordion();
+		  		</script>
+		  	</div>
+		</div>
+</div>

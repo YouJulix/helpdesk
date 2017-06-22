@@ -29,8 +29,6 @@ angular.
 						switch(urlAttr.section){
 							case "admin": //Entran a la ruta admin
 								if(localStorage.getItem("admin")=="true"){
-									//return "Has lo tuyo admin";
-									//return "<barra-admin></barra-admin>";
 									window.location = "#!/" + urlAttr.lang + "/admin/notificaciones";
 								}else{
 									window.location = "#!/" + urlAttr.lang + "/login";

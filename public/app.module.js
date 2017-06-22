@@ -18,5 +18,9 @@ angular.module('helpDeskApp',[
 	'chat',
 	'chatAdmin',
 	'reporteUser',
-	'seccionEditreport'
+	'seccionEditreport',
+	'seccionFaq',
+	'contentFaq',
+	'seccionAdminFaq',
+	'contentAdminFaq'
 	]);

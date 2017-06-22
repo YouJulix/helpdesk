@@ -13,7 +13,11 @@ var UserCtrl = require('./routes/users-api/users.controller'); //Instancio el co
 //Api reportes de usuarios
 var ReportModel = require('./routes/reportes-api/reportes.schema'); 
 var ReportCtrl = require('./routes/reportes-api/reportes.controller');
-var reportes_routes = require('./routes/reportes-api/reportes.routes'); 
+var reportes_routes = require('./routes/reportes-api/reportes.routes');
+//Api faqs
+var FaqModel = require('./routes/faq-api/faq.schema'); 
+var FaqCtrl = require('./routes/faq-api/faq.controller');
+var faqs_routes = require('./routes/faq-api/faq.routes'); 
 
 
 //Api servicios software
@@ -47,7 +51,8 @@ reportes_routes.addAPIRouter(app, ReportCtrl); //La funcion addAPIRouter enlaza 
 servSoftwRoutes.addAPIRouter(app, servSoftwCtrl);
 //Api internet_service
 internet_routes.addAPIRouter(app, InternetCtrl);
-
+//Api faqs routes
+faqs_routes.addAPIRouter(app,FaqCtrl);
 //Start Server
 app.listen(port, function(){
 	console.log("Node server running on http://localhost:" + port);

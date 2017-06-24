@@ -19,16 +19,25 @@ var FaqModel = require('./routes/faq-api/faq.schema');
 var FaqCtrl = require('./routes/faq-api/faq.controller');
 var faqs_routes = require('./routes/faq-api/faq.routes'); 
 
+//Api servicios
+var ServModel = require('./routes/servicios-api/servicios.schema');
+var ServiceCtrl = require('./routes/servicios-api/servicios.controller');
+var servicios_routes = require('./routes/servicios-api/servicios.routes');
 
 //Api servicios software
-var servSoftModel = require('./routes/servicio-software-api/servicio-software.schema'); 
-var servSoftwCtrl = require('./routes/servicio-software-api/servicio-software.controller');
-var servSoftwRoutes = require('./routes/servicio-software-api/servicio-software.routes'); 
+var SoftwareModel = require('./routes/software-api/software.schema'); 
+var SoftwareCtrl = require('./routes/software-api/software.controller');
+var software_routes = require('./routes/software-api/software.routes'); 
 
 //API ServiceInternet
 var internet_routes = require('./routes/internet-api/internet.routes'); 
 var InternetModel = require('./routes/internet-api/internet.schema'); 
 var InternetCtrl = require('./routes/internet-api/internet.controller');
+
+//Api servicios cuentas de usuario
+var CuentasModel = require('./routes/cuentas-api/cuentas.schema'); 
+var CuentasCtrl = require('./routes/cuentas-api/cuentas.controller');
+var cuentas_routes = require('./routes/cuentas-api/cuentas.routes'); 
 
 //Connection to BD
 mongoose.connect(db.url);
@@ -47,10 +56,14 @@ app.use(express.static('public')); //Para el servicio de archivos estáticos com
 users_routes.addAPIRouter(app, UserCtrl); //La funcion addAPIRouter enlaza rutas de un api que creamos a sus controladores(funciones); y hace que 'app' use esas rutas(app.use())
 //API routes_Reportes
 reportes_routes.addAPIRouter(app, ReportCtrl); //La funcion addAPIRouter enlaza rutas de un api que creamos a sus controladores(funciones); y hace que 'app' use esas rutas(app.use())
+//API routes_servicios
+servicios_routes.addAPIRouter(app, ServiceCtrl);
 //API Servicio de Software
-servSoftwRoutes.addAPIRouter(app, servSoftwCtrl);
+software_routes.addAPIRouter(app, SoftwareCtrl);
 //Api internet_service
 internet_routes.addAPIRouter(app, InternetCtrl);
+//API Servicio de Cuentas de Usuario
+cuentas_routes.addAPIRouter(app, CuentasCtrl);
 //Api faqs routes
 faqs_routes.addAPIRouter(app,FaqCtrl);
 //Start Server

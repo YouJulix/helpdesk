@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 //CONTROLERS - FUNCIONES QUE EJECUTARÁN GET, PUT, DELETE...
 var Internet = mongoose.model('internetService');
-//Instancia del modelo reportes
+//Instancia del modelo servicios de internet
 
 exports.findAllServices =  function(request, response){
 	Internet.find(function(errno, internet){
@@ -24,6 +24,7 @@ exports.findServiceByUser = function(request, response){
 exports.addService = function(request, response){
 	console.log(request.body);
 	var newService = new Internet({
+		idSolicitud			: request.body.idSolicitud,
 		internetServiceId	: request.body.internetServiceId,
 		userId				: request.body.userId,
 		serviceMode			: request.body.serviceMode,  

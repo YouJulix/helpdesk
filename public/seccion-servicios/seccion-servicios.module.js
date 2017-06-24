@@ -1,5 +1,6 @@
-angular.module('seccionServicios', [
+angular.module('seccionServicios',[
 	'ngRoute',
 	'barraPrincipal',
-	'contentServicios'
+	'barraContactos',
+	'chat'
 	]);

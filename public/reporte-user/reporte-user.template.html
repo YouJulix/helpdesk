@@ -1,0 +1,91 @@
+<!--<div class="main ui grid container stackable">
+		<div class="row">-->
+			<div class="column eleven wide ">
+				<div class="ui large form  segment">
+					<h2 class="ui dividing header teal"><i class="icon edit"></i>{{$crl.nreport}} {{$ctrl.idReporte}}</h2>
+					<!-- Edificio y Equipo hechos con select
+					-->
+					<div class="ui segment">
+						{{$ctrl.nfrom}}: <b>{{$ctrl.reporte.userId}}</b><br>
+						{{$ctrl.ndate}}: {{$ctrl.reporte.fecha}}
+					</div>
+
+					<div class="field eight wide">
+						<label>{{$ctrl.nstatus}}:</label>
+						<select ng-model="$ctrl.reporte.estado" disabled>
+							<option>En Progreso</option>
+							<option>A destiempo</option>
+							<option>Atendido</option>
+							<option>Cancelado</option>
+						</select>
+					</div>
+
+					<div class="field eight wide">
+							<label>{{$ctrl.nlocation}}</label>
+							<select  value="edificio" ng-model="$ctrl.reporte.edificio" ng-disabled="$ctrl.usage"> <!-- class="ui search dropdown"> -->
+								<option>{{$ctrl.nassit}}</option>
+								<option>{{$ctrl.nclass}}</option>
+								<option>{{$ctrl.nlib}}</option>
+								<option>{{$ctrl.nteacher}}</option>
+								<option>{{$ctrl.nrectory}}</option>
+								<option>{{$ctrl.nroomt}}</option>
+								<option>{{$ctrl.nvica}}</option>
+								<option>{{$ctrl.nvicm}}</option>
+						</select>
+					</div>
+					<div class="field eight wide">
+						<label>{{$ctrl.nequipment}}</label>
+						<select ng-model="$ctrl.reporte.equipo" ng-disabled="$ctrl.usage"> 
+							<option>{{$ctrl.nspeak}}</option> 
+							<option>{{$ctrl.ncamera}}</option>
+							<option>{{$ctrl.nproject}}</option>
+							<option>{{$ctrl.ncontacts}}</option>
+							<option>CPU</option>
+							<option>{{$ctrl.nlamp}}</option>
+							<option>{{$ctrl.ntable}}</option>
+							<option>Monitor</option>
+							<option>Mouse</option>
+							<option>{{$ctrl.nchair}}</option>
+							<option>SMART</option>
+							<option>{{$ctrl.nkeyboard}}</option>
+						</select>
+					</div>
+
+					<div class="fields">
+						<div class="field eight wide required">
+							<label>{{$ctrl.ninventary}}</label>
+							<input type="text" name="inventario" ng-model="$ctrl.reporte.numeroInventario" ng-disabled="$ctrl.usage">
+						</div>
+						<div class="field eight wide">
+							<label>{{$ctrl.noffice}}</label>
+							<input type="text" name="num_aula" ng-model="$ctrl.reporte.numUbicacion" ng-disabled="$ctrl.usage">
+						</div>
+					</div>
+					<div class="field">
+						<label>{{$ctrl.ndescription}}</label>
+						<textarea rows="4" ng-model="$ctrl.reporte.descripcionProblema" ng-disabled="$ctrl.usage"></textarea>
+					</div>
+					<div class="field">
+						<label>{{$ctrl.nresponse}}</label>
+						<textarea rows="4" ng-model="$ctrl.reporte.solucionProblema" disabled></textarea>
+					</div>
+					<button class="ui button" ng-click="$ctrl.back()" type="submit"><i class="icon arrow left">
+						</i>{{$ctrl.nback}}
+					</button>
+					
+					<button class="ui button yellow" ng-show="!$ctrl.edit" ng-click="$ctrl.modificar()">
+						<i class="icon edit"></i></i>{{$ctrl.nedit}}
+					</button>
+					
+					<button class="ui button green" type="submit" ng-show="$ctrl.edit" ng-click="$ctrl.updateReporte()">
+						<i class="icon save"></i>{{$ctrl.nsave}}
+					</button>
+					
+					<button class="ui button red" type="submit" ng-click="$ctrl.deleteReporte()">
+						<i class="icon delete"></i>{{$ctrl.ndelete}}
+					</button>
+				</div>
+			</div>
+<!--		</div>
+</div>-->
+

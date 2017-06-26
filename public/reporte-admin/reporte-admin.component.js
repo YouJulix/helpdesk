@@ -6,6 +6,7 @@ angular.
 				var self = this;
 
 				self.idReporte = $routeParams.idReporte;
+				
 				$http({
 					method : 'GET',
 					url : 'http://localhost:8000/api/v1.0/reports/' + self.idReporte

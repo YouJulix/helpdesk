@@ -5,6 +5,7 @@ angular.
 			controller: ['$http', '$routeParams', function ContentReportesController($http, $routeParams){
 				var self = this;
 				//self.locations;
+				localStorage.removeItem("idReporte");
 				self.changeLanguage = function(lang, section){
 					if(lang == "es" || lang == "en"){ //Se se ingreso un lenguaje permitido
 						//if(section == "welcome" || section == "bienvenido" || section == "reportes" || section == "reports" || section == "servicios" || section == "services" || section == "faq" || section == "busqueda" || section == "search"){//Secciones permitidas
@@ -60,9 +61,11 @@ angular.
 						window.location = self2.path + "#!/" + lang + "/" + self.section;
 					}
 				}
+
 				self.section = $routeParams.section;
 				self.lang = $routeParams.lang;
 				self.changeLanguage(self.lang, self.section);
+				
 				self.getReports = function(){
 					$http({
 						method 	: "GET",
@@ -78,7 +81,9 @@ angular.
 						window.location.reload();
 					});
 				}
+
 				self.getReports();
+				
 				self.saveReport = function(){
 					//construir data
 					var d = new Date(Date());
@@ -108,6 +113,12 @@ angular.
 						console.log(error);
 						alert("Hubo problemas al enviar el reporte, por favor intente otra vez");
 					});
+				}
+
+				self.editReport =  function(index) {
+					//console.log(index);
+					localStorage.setItem("idReporte",index.idReporte);	
+					window.location = "#!/" + self.lang + "/editreport"
 				}
 
 			}]

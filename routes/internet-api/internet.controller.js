@@ -45,3 +45,48 @@ exports.addService = function(request, response){
 		response.status(200).jsonp(service);
 	});
 }
+
+exports.updateService = function(request, response){
+	Service.find({ userId : req.params.user }, function(errno, service){ //busco elemento a actualizar(mongoose guarda su _id)
+		service[0].location		=	request.body.location;
+		service[0].mac			=	request.body.mac;
+		service[0].fechafin		=	request.body.fechafin;
+		service[0].fechaInit	=	request.body.fechaInit;
+		service[0].urls			=	request.body.urls;
+
+		service[0].save(function(errno){
+			if(errno)
+				return response.status(500).send(errno.message);
+			console.log("PUT/services/:user");
+			response.status(200).send(service);
+		})
+	})
+}
+
+exports.deleteService = function(request, response){
+	Service.find({ userId : req.params.user }, function(errno, service){ //busco elemento a actualizar(mongoose guarda su _id)
+		service[0].remove(function(errno){ //Find regresa un array, debemos tomar el primer y único elemento que regreso ( en la posicion [0])
+			if(errno)
+				return response.status(500).send(errno.message);
+			console.log('DELETE/services/:user');
+			response.status(200).send();
+		})
+	})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,17 +1,67 @@
+<<<<<<< HEAD
+<!--<<<<<<< HEAD
+=======
+=======
+>>>>>>> b6eeb2182e84e784c42a1675ebb48354e61afa5c
 <div class="ui segment">
 	<h2 class="ui dividing header teal"><i class="icon edit"></i>{{$ctrl.servicesTitle}}</h2>
 	<div class="ui grid">
 		<div class="row">
+<<<<<<< HEAD
+			<div class="column" ng-repeat="section in $ctrl.sections"> section va sin prefijo $ctrl., porque será una variable local del ámbito ng-repeat, Aunque la descarga del json(el que trae el diccionario) tarde el two-binding hará que cuando el controlador se descargue(Y se asigne), se actualice la vista 
+				<div class="icon-flat">
+					<h3>{{section.title}}</h3>
+					<a href="#!/{{$ctrl.lang}}/{{section.link}}"><i class="circular icon {{section.icon}} massive link teal" ></i></a>
+				</div>
+				  <p>{{section.description}}</p> //Si hago directamente esto: imprime un String(El navegador no lo procesa como HTML)				<p ng-bind-html="section.description"></p> Esta directiva(ng-bind-html) viene dentro del modulo angular-sanitize.js (Se debe incluir como dependencia en nuestro modulo actual a 'ngSanitize') // Y lo que hace es convertir la variable enlazada(String) a un HTML válido y que el navegador lo pueda dibujar
+			</div>
+		</div>
+	</div>
+</div>
+>>>>>>> ba06195018637b2e555e0412d61ba0da6a04cd50
+-->
+<div class="ui segment">
+				<h2 class="ui dividing header teal"><i class="icon configure"></i>Solicitar Servicio</h2>
+				<div class="ui top attached tabular large menu">
+					<!-- <div class="ui pointing secondary large menu"> -->
+					<a class="item active" data-tab="software"><i class="large icon database"></i>Software</a>
+					<a class="item" data-tab="acceso_internet"><i class="large icon world"></i>Internet</a>
+					<a class="item" data-tab="cuentas_usuario"><i class="large icon users"></i>Cuentas de Usuario</a>
+				</div>
+				<div class="ui bottom attached active tab segment" data-tab="software">
+					<div class="ui pointing secondary menu">
+						<a class="item active" data-tab="instalacion_software"><i class="large icon disk outline"></i>Instalación de Software</a>
+						<a class="item" data-tab="descarga_software"><i class="large icon download"></i>Descarga de Software</a>
+					</div>
+					<div class="ui active tab" data-tab="instalacion_software">
+						<div class="ui large form segment">
+							<div class="eight wide field">
+								<label>Nombre del Software</label>
+								<input type="text" name="nombre_software">
+							</div>
+							<div class="eight wide field">
+								<label>Versión del Software</label>
+								<input type="text" name="version_software">
+							</div>
+							<div class="eight wide field">
+								<label>Número de equipos</label>
+								<input type="number" name="num_equipos">
+							</div>
+							<div class="eight wide field">
+								<label>Aula</label>
+								<input type="text" name="num_aula">
+=======
 			<div class="sixteen wide column">
 				<!-- ========== Inicio del modal ========== -->
 				<div class="ui united modal" id="modalServicios">
-					<div>
+					<form class="ui form">
 						<div class="ui large form segment" >
 							<h2 class="ui dividing header teal"><i class="icon edit"></i>{{$ctrl.addService}}</h2>
 							<div class="ui top attached tabular large menu">
 								<a class="item active" data-tab="software"><i class="large icon database"></i>{{$ctrl.software}}</a>
 								<a class="item" data-tab="acceso_internet"><i class="large icon world"></i>{{$ctrl.internet}}</a>
 								<a class="item" data-tab="cuentas_usuario"><i class="large icon users"></i>{{$ctrl.userAccount}}</a>
+>>>>>>> b6eeb2182e84e784c42a1675ebb48354e61afa5c
 							</div>
 
 							<!-- SOFTWARE -->
@@ -23,31 +73,36 @@
 								<!-- INSTALACION DE SOFTWARE -->
 								<div class="ui active tab" data-tab="instalacion_software">
 									<div class="ui large form segment">
-										<div class="field">
+										<div class="field required">
 											<label>{{$ctrl.nameSoftware}}</label>
-											<input placeholder="Nombre del software" ng-model="$ctrl.nombre" type="text" name="nombre">
+											<input placeholder="Nombre del software" ng-model="$ctrl.nombre" type="text" name="nombre" required>
 										</div>
-										<div class="eight wide field">
+										<div class="eight wide field required">
 											<label>{{$ctrl.versionSoftware}}</label>
-											<input ng-model="$ctrl.version" type="text" name="version">
+											<input ng-model="$ctrl.version" type="text" name="version" required>
 										</div>
-										<div class="eight wide field">
+										<div class="eight wide field required">
 											<label>{{$ctrl.numberEquipment}}</label>
-											<input ng-model="$ctrl.numero" type="text" name="numero">
+											<input ng-model="$ctrl.numero" type="number" name="numero" required>
 										</div>
-										<div class="eight wide field">
+										<div class="eight wide field required">
 											<label>{{$ctrl.classroom}}</label>
-											<input ng-model="$ctrl.aula" type="text" name="aula">
+											<input ng-model="$ctrl.aula" type="number" name="aula" required>
 										</div>
-										<div class="eight wide field">
+										<div class="eight wide field required">
 											<label>{{$ctrl.matter}}</label>
-											<input ng-model="$ctrl.materia" type="text" name="materia">
+											<input ng-model="$ctrl.materia" type="text" name="materia" required>
 										</div>
-										<div class="eight wide field">
+										<div class="eight wide field required">
 											<label>{{$ctrl.dateLimit}}</label>
-											<input ng-model="$ctrl.fecha" type="text" name="fecha">
+											<div class="ui calendar" id="fechaLimite">
+										  		<div class="ui input left icon">
+										    		<i class="calendar icon"></i>
+										    		<input ng-model="$ctrl.fecha" type="text" name="fecha" placeholder="Fecha/Hora">
+										  		</div>
+											</div>
 										</div>
-										<div class="field">
+										<div class="field required">
 											<label>{{$ctrl.commentInstallation}}</label>
 											<textarea ng-model="$ctrl.comentarios" rows="4" required></textarea>
 										</div>
@@ -57,26 +112,31 @@
 								<!-- DESCARGA DE SOFTWARE -->
 								<div class="ui tab" data-tab="descarga_software">
 									<div class="ui large form segment">
-										<div class="eight wide field">
+										<div class="eight wide field required">
 											<label>{{$ctrl.nameDownload}}</label>
-											<input ng-model="$ctrl.nombreDescarga" type="text" name="nombreDescarga">
+											<input ng-model="$ctrl.nombreDescarga" type="text" name="nombreDescarga" required>
 										</div>
-										<div class="eight wide field">
+										<div class="eight wide field required">
 											<label>{{$ctrl.versionDownload}}</label>
-											<input ng-model="$ctrl.versionDescarga" type="text" name="versionDescarga">
+											<input ng-model="$ctrl.versionDescarga" type="text" name="versionDescarga" required="">
 										</div>
-										<div class="eight wide field">
+										<div class="eight wide field required">
 											<label>{{$ctrl.dateDownload}}</label>
-											<input ng-model="$ctrl.fechaDescarga" type="text" name="fechaDescarga">
+											<div class="ui calendar" id="fechaDescarga">
+										  		<div class="ui input left icon">
+										    		<i class="calendar icon"></i>
+										    		<input ng-model="$ctrl.fechaDescarga" type="text" name="fechaDescarga" placeholder="Fecha/Hora">
+										  		</div>
+											</div>
 										</div>
 										<div class="field required">
 											<label>{{$ctrl.commentDownload}}</label>
 											<textarea ng-model="$ctrl.comentarios" rows="4" required></textarea>
 										</div>
 									</div>
-								</div>
+								</div><br>
 								<!-- Botón para guardar los datos del servicio de software -->
-								<button ng-click="$ctrl.saveServiceSoftware()" class="ui button teal">{{$ctrl.send}}</button>
+								<button ng-click="$ctrl.saveServiceSoftware()" class="ui button teal" type="submit">{{$ctrl.send}}</button>
 							</div>
 
 							<!-- INTERNET -->
@@ -87,11 +147,11 @@
 								</div>
 								<div class="ui active tab segment" data-tab="equipo_externo">
 									<div class="ui large form">
-										<div class="eight wide field">
+										<div class="eight wide field required">
 											<label>{{$ctrl.macAddress}}</label>
-											<input ng-model="$ctrl.mac" type="text" name="mac">
+											<input ng-model="$ctrl.mac" type="text" name="mac" required>
 										</div>
-										<div class="field">
+										<div class="field required">
 											<label>{{$ctrl.connectionPlace}}</label>
 											<div class="fields">
 												<div class="six wide field">
@@ -138,25 +198,35 @@
 								</div>
 								<div class="ui tab segment" data-tab="equipo_interno">
 									<div class="ui large form">
-										<div class="field eight wide">
+										<div class="field eight wide required">
 											<label>{{$ctrl.classroom}}</label>
-											<input  ng-model="$ctrl.aulaInternet" type="text" name="aula">
+											<input  ng-model="$ctrl.aulaInternet" type="number" name="aula" required>
 										</div>
-										<div class="field eight wide">
+										<!--<div class="field eight wide required">
 											<label>{{$ctrl.dateEnd}}</label>
-											<input ng-model="$ctrl.fechaTermino" type="text" name="fecha">
-										</div>
-										<div class="field eight wide">
+											<input ng-model="$ctrl.fechaTermino" type="text" name="fecha" required>
+										</div>-->
+										<div class="field eight wide required">
 											<label>{{$ctrl.initialHour}}</label>
-											<input ng-model="$ctrl.horaInicio" type="text" name="hora_inicio">
+											<div class="ui calendar" id="fechaInicio">
+										  		<div class="ui input left icon">
+										    		<i class="calendar icon"></i>
+										    		<input ng-model="$ctrl.horaInicio" type="text" name="hora_inicio" placeholder="Fecha/Hora">
+										  		</div>
+											</div>
 										</div>
-										<div class="field eight wide">
+										<div class="field eight wide required">
 											<label>{{$ctrl.hourEnd}}</label>
-											<input ng-model="$ctrl.horaTermino" type="text" name="hora_termino">
+											<div class="ui calendar" id="fechaTermino">
+										  		<div class="ui input left icon">
+										    		<i class="calendar icon"></i>
+										    		<input ng-model="$ctrl.horaTermino" type="text" name="hora_termino" placeholder="Fecha/Hora">
+										  		</div>
+											</div>
 										</div>
-										<div class="field">
+										<div class="field required">
 											<label>{{$ctrl.url}}</label>
-											<textarea ng-model="$ctrl.urls" rows="2" name="urls"></textarea>
+											<textarea ng-model="$ctrl.urls" rows="2" name="urls" required></textarea>
 										</div>
 									</div>
 								</div>
@@ -167,9 +237,9 @@
 							<!-- CUENTAS DE USUARIO -->
 							<div class="ui bottom attached tab segment" data-tab="cuentas_usuario">
 								<div class="ui large form  segment">
-									<div class="field">
+									<div class="field required">
 										<label>{{$ctrl.platform}}</label>
-										<div class="grouped fields">
+										<div class="grouped fields required">
 											<div class="field">
 												<div class="ui radio checkbox">
 													<input ng-click="$ctrl.plataforma=$ctrl.aulaVirtual" type="radio" name="plataforma">
@@ -184,7 +254,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="field">
+									<div class="field required">
 										<label>{{$ctrl.activity}}</label>
 										<div class="grouped fields">
 											<div class="field">
@@ -201,15 +271,15 @@
 											</div>
 										</div>
 									</div>					
-									<div class="field">
+									<div class="field required">
 										<label>{{$ctrl.descriptionProblem}}</label>
-										<textarea ng-model="descripcion" rows="4"></textarea>
+										<textarea ng-model="descripcion" rows="4" required></textarea>
 									</div>
 									<button  ng-click="$ctrl.saveServiceAccount()" class="ui button teal">{{$ctrl.send}}</button>
 								</div>
 							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 				<!-- Fin del modal -->
 				<button data-modal="modalServicios" id="call-modals" class="ui button"><i class="icon add circle"></i>{{$ctrl.addService}}</button>
@@ -260,7 +330,7 @@
 						<tr ng-repeat = "service in $ctrl.servicesi">
 							<td>{{service.internetServiceId}}</td>
 							<td>{{service.fechaInit}}</td>
-							<td>{{service.serviceMode}}</td>
+							<td>Internet: {{service.serviceMode}}</td>
 							<td ng-if="service.status == 'En Progreso'"><button class="ui button blue fluid">{{service.status}}</button></td>
 							<td ng-if="service.status == 'Atendido'"><button class="ui button green fluid">{{service.status}}</button></td>
 							<td ng-if="service.status == 'A destiempo'"><button class="ui button yellow fluid">{{service.status}}</button></td>

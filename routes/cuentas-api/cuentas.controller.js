@@ -27,7 +27,7 @@ exports.addService = function(request, response){
 		idSolicitud 		: request.body.idSolicitud,
 		cuentaServiceId		: request.body.cuentaServiceId,
 		userId 				: request.body.userId,
-		serviceMode			: request.body.plataforma,	//serviceMode va a tomar el valor de la plataforma  
+		serviceMode			: request.body.serviceMode,	//serviceMode va a tomar el valor de la plataforma  
 		status				: request.body.status,
 		fechaInit			: request.body.fechaInit,
 		actividad			: request.body.actividad,
@@ -42,5 +42,38 @@ exports.addService = function(request, response){
 		response.status(200).jsonp(service);
 	});
 }
+
+exports.updateService = function(request, response){
+	Service.find({ userId : req.params.user }, function(errno, service){ //busco elemento a actualizar(mongoose guarda su _id)
+		service[0].fechaInit		=	request.body.fechaInit;
+		service[0].actividad		=	request.body.actividad;
+		service[0].descripcion		=	request.body.descripcion;
+		service[0].solucion 		=	request.body.solucion;
+
+		service[0].save(function(errno){
+			if(errno)
+				return response.status(500).send(errno.message);
+			console.log("PUT/services/:user");
+			response.status(200).send(service);
+		})
+	})
+}
+
+exports.deleteService = function(request, response){
+	Service.find({ userId : req.params.user }, function(errno, service){ //busco elemento a actualizar(mongoose guarda su _id)
+		service[0].remove(function(errno){ //Find regresa un array, debemos tomar el primer y único elemento que regreso ( en la posicion [0])
+			if(errno)
+				return response.status(500).send(errno.message);
+			console.log('DELETE/services/:user');
+			response.status(200).send();
+		})
+	})
+}
+
+
+
+
+
+
 
 

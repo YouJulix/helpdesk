@@ -9,7 +9,9 @@ exports.addAPIRouter = function(app, CuentasServiceCtrl){ //Siempre hay que util
 		.post(CuentasServiceCtrl.addService);
 		
 	cuentas.route('/cuentas/:user') 
-		.get(CuentasServiceCtrl.findServiceByUser);
+		.get(CuentasServiceCtrl.findServiceByUser)
+		.put(CuentasServiceCtrl.updateService)
+		.delete(CuentasServiceCtrl.deleteService);
 
 	
 	app.use("/api/v1.0", cuentas); //Usar en la ruta '/api/v1.0', las rutas/api definidas en el objeto  users

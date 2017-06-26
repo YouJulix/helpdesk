@@ -8,7 +8,9 @@ exports.addAPIRouter = function(app, InternetServiceCtrl){
 		.post(InternetServiceCtrl.addService);
 
 	internet.route('/internet/:user')
-		.get(InternetServiceCtrl.findServiceByUser);
+		.get(InternetServiceCtrl.findServiceByUser)
+		.put(InternetServiceCtrl.updateService)
+		.delete(InternetServiceCtrl.deleteService);
 
 		
 	app.use("/api/v1.0", internet); //Usar en la ruta '/api/v1.0', las rutas/api definidas en el objeto  users

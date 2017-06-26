@@ -1,56 +1,5 @@
-<<<<<<< HEAD
-<!--<<<<<<< HEAD
-=======
-=======
->>>>>>> b6eeb2182e84e784c42a1675ebb48354e61afa5c
-<div class="ui segment">
-	<h2 class="ui dividing header teal"><i class="icon edit"></i>{{$ctrl.servicesTitle}}</h2>
-	<div class="ui grid">
-		<div class="row">
-<<<<<<< HEAD
-			<div class="column" ng-repeat="section in $ctrl.sections"> section va sin prefijo $ctrl., porque será una variable local del ámbito ng-repeat, Aunque la descarga del json(el que trae el diccionario) tarde el two-binding hará que cuando el controlador se descargue(Y se asigne), se actualice la vista 
-				<div class="icon-flat">
-					<h3>{{section.title}}</h3>
-					<a href="#!/{{$ctrl.lang}}/{{section.link}}"><i class="circular icon {{section.icon}} massive link teal" ></i></a>
-				</div>
-				  <p>{{section.description}}</p> //Si hago directamente esto: imprime un String(El navegador no lo procesa como HTML)				<p ng-bind-html="section.description"></p> Esta directiva(ng-bind-html) viene dentro del modulo angular-sanitize.js (Se debe incluir como dependencia en nuestro modulo actual a 'ngSanitize') // Y lo que hace es convertir la variable enlazada(String) a un HTML válido y que el navegador lo pueda dibujar
-			</div>
-		</div>
-	</div>
-</div>
->>>>>>> ba06195018637b2e555e0412d61ba0da6a04cd50
--->
-<div class="ui segment">
-				<h2 class="ui dividing header teal"><i class="icon configure"></i>Solicitar Servicio</h2>
-				<div class="ui top attached tabular large menu">
-					<!-- <div class="ui pointing secondary large menu"> -->
-					<a class="item active" data-tab="software"><i class="large icon database"></i>Software</a>
-					<a class="item" data-tab="acceso_internet"><i class="large icon world"></i>Internet</a>
-					<a class="item" data-tab="cuentas_usuario"><i class="large icon users"></i>Cuentas de Usuario</a>
-				</div>
-				<div class="ui bottom attached active tab segment" data-tab="software">
-					<div class="ui pointing secondary menu">
-						<a class="item active" data-tab="instalacion_software"><i class="large icon disk outline"></i>Instalación de Software</a>
-						<a class="item" data-tab="descarga_software"><i class="large icon download"></i>Descarga de Software</a>
-					</div>
-					<div class="ui active tab" data-tab="instalacion_software">
-						<div class="ui large form segment">
-							<div class="eight wide field">
-								<label>Nombre del Software</label>
-								<input type="text" name="nombre_software">
-							</div>
-							<div class="eight wide field">
-								<label>Versión del Software</label>
-								<input type="text" name="version_software">
-							</div>
-							<div class="eight wide field">
-								<label>Número de equipos</label>
-								<input type="number" name="num_equipos">
-							</div>
-							<div class="eight wide field">
-								<label>Aula</label>
-								<input type="text" name="num_aula">
-=======
+	<div class="ui segment">
+			<h2 class="ui dividing header teal"><i class="icon configure"></i>Solicitar Servicio</h2>
 			<div class="sixteen wide column">
 				<!-- ========== Inicio del modal ========== -->
 				<div class="ui united modal" id="modalServicios">
@@ -61,7 +10,6 @@
 								<a class="item active" data-tab="software"><i class="large icon database"></i>{{$ctrl.software}}</a>
 								<a class="item" data-tab="acceso_internet"><i class="large icon world"></i>{{$ctrl.internet}}</a>
 								<a class="item" data-tab="cuentas_usuario"><i class="large icon users"></i>{{$ctrl.userAccount}}</a>
->>>>>>> b6eeb2182e84e784c42a1675ebb48354e61afa5c
 							</div>
 
 							<!-- SOFTWARE -->
@@ -114,11 +62,11 @@
 									<div class="ui large form segment">
 										<div class="eight wide field required">
 											<label>{{$ctrl.nameDownload}}</label>
-											<input ng-model="$ctrl.nombreDescarga" type="text" name="nombreDescarga" required>
+											<input ng-model="$ctrl.nombre" type="text" name="nombreDescarga" required>
 										</div>
 										<div class="eight wide field required">
 											<label>{{$ctrl.versionDownload}}</label>
-											<input ng-model="$ctrl.versionDescarga" type="text" name="versionDescarga" required="">
+											<input ng-model="$ctrl.version" type="text" name="versionDescarga" required="">
 										</div>
 										<div class="eight wide field required">
 											<label>{{$ctrl.dateDownload}}</label>
@@ -284,84 +232,83 @@
 				<!-- Fin del modal -->
 				<button data-modal="modalServicios" id="call-modals" class="ui button"><i class="icon add circle"></i>{{$ctrl.addService}}</button>
 			</div>
+		<!-- ========== Tabla de servicios ========== -->
+		<h2>{{$ctrl.listServices}}</h2>
+		<div class="ui top attached tabular large menu">
+			<a class="item active" data-tab="software"><i class="large icon database"></i>{{$ctrl.software}}</a>
+			<a class="item" data-tab="acceso_internet"><i class="large icon world"></i>{{$ctrl.internet}}</a>
+			<a class="item" data-tab="cuentas_usuario"><i class="large icon users"></i>{{$ctrl.userAccount}}</a>
 		</div>
-	</div>
-	<!-- ========== Tabla de servicios ========== -->
-	<h2>{{$ctrl.listServices}}</h2>
-	<div class="ui top attached tabular large menu">
-		<a class="item active" data-tab="software"><i class="large icon database"></i>{{$ctrl.software}}</a>
-		<a class="item" data-tab="acceso_internet"><i class="large icon world"></i>{{$ctrl.internet}}</a>
-		<a class="item" data-tab="cuentas_usuario"><i class="large icon users"></i>{{$ctrl.userAccount}}</a>
-	</div>
-	<div class="ui bottom attached active tab segment" data-tab="software">
-		<table class="ui celled table">
-			<thead>
-				<tr>
-					<th>{{$ctrl.code}}</th>
-					<th>{{$ctrl.date}}</th>
-					<th>{{$ctrl.solicitud}}</th>
-					<th>{{$ctrl.status}}</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat = "service in $ctrl.servicess">
-					<td>{{service.softwareServiceId}}</td>
-					<td>{{service.fechaInit}}</td>
-					<td>{{service.serviceMode}}</td>
-					<td ng-if="service.status == 'En Progreso'"><button class="ui button blue fluid">{{service.status}}</button></td>
-					<td ng-if="service.status == 'Atendido'"><button class="ui button green fluid">{{service.status}}</button></td>
-					<td ng-if="service.status == 'A destiempo'"><button class="ui button yellow fluid">{{service.status}}</button></td>
-					<td ng-if="service.status == 'Cancelado'"><button class="ui button red fluid">{{service.status}}</button></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>			
-		<div class="ui bottom attached tab segment" data-tab="acceso_internet">
-				<table class="ui celled table">
-					<thead>
-						<tr>
-							<th>{{$ctrl.code}}</th>
-							<th>{{$ctrl.date}}</th>
-							<th>{{$ctrl.solicitud}}</th>
-							<th>{{$ctrl.status}}</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat = "service in $ctrl.servicesi">
-							<td>{{service.internetServiceId}}</td>
-							<td>{{service.fechaInit}}</td>
-							<td>Internet: {{service.serviceMode}}</td>
-							<td ng-if="service.status == 'En Progreso'"><button class="ui button blue fluid">{{service.status}}</button></td>
-							<td ng-if="service.status == 'Atendido'"><button class="ui button green fluid">{{service.status}}</button></td>
-							<td ng-if="service.status == 'A destiempo'"><button class="ui button yellow fluid">{{service.status}}</button></td>
-							<td ng-if="service.status == 'Cancelado'"><button class="ui button red fluid">{{service.status}}</button></td>
-						</tr>
-					</tbody>
-				</table>	
-		</div>
-		<div class="ui bottom attached tab segment" data-tab="cuentas_usuario">
+		<div class="ui bottom attached active tab segment" data-tab="software">
 			<table class="ui celled table">
-			<thead>
-				<tr>
-					<th>{{$ctrl.code}}</th>
-					<th>{{$ctrl.date}}</th>
-					<th>{{$ctrl.solicitud}}</th>
-					<th>{{$ctrl.status}}</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat = "service in $ctrl.servicesc">
-					<td>{{service.cuentaServiceId}}</td>
-					<td>{{service.fechaInit}}</td>
-					<td>{{service.serviceMode}}</td>
-					<td ng-if="service.status == 'En Progreso'"><button class="ui button blue fluid">{{service.status}}</button></td>
-					<td ng-if="service.status == 'Atendido'"><button class="ui button green fluid">{{service.status}}</button></td>
-					<td ng-if="service.status == 'A destiempo'"><button class="ui button yellow fluid">{{service.status}}</button></td>
-					<td ng-if="service.status == 'Cancelado'"><button class="ui button red fluid">{{service.status}}</button></td>
-				</tr>
-			</tbody>
-		</table>						
-		</div>	
-	<!-- ========== Tabla de servicios ==========-->
+				<thead>
+					<tr>
+						<th>{{$ctrl.code}}</th>
+						<th>{{$ctrl.date}}</th>
+						<th>{{$ctrl.solicitud}}</th>
+						<th>{{$ctrl.status}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "service in $ctrl.servicess">
+						<td>{{service.softwareServiceId}}</td>
+						<td>{{service.fechaInit}}</td>
+						<td>{{service.serviceMode}}</td>
+						<td ng-if="service.status == 'En Progreso'"><button class="ui button blue fluid">{{service.status}}</button></td>
+						<td ng-if="service.status == 'Atendido'"><button class="ui button green fluid">{{service.status}}</button></td>
+						<td ng-if="service.status == 'A destiempo'"><button class="ui button yellow fluid">{{service.status}}</button></td>
+						<td ng-if="service.status == 'Cancelado'"><button class="ui button red fluid">{{service.status}}</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>			
+			<div class="ui bottom attached tab segment" data-tab="acceso_internet">
+					<table class="ui celled table">
+						<thead>
+							<tr>
+								<th>{{$ctrl.code}}</th>
+								<th>{{$ctrl.date}}</th>
+								<th>{{$ctrl.solicitud}}</th>
+								<th>{{$ctrl.status}}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat = "service in $ctrl.servicesi">
+								<td>{{service.internetServiceId}}</td>
+								<td>{{service.fechaInit}}</td>
+								<td>Internet: {{service.serviceMode}}</td>
+								<td ng-if="service.status == 'En Progreso'"><button class="ui button blue fluid">{{service.status}}</button></td>
+								<td ng-if="service.status == 'Atendido'"><button class="ui button green fluid">{{service.status}}</button></td>
+								<td ng-if="service.status == 'A destiempo'"><button class="ui button yellow fluid">{{service.status}}</button></td>
+								<td ng-if="service.status == 'Cancelado'"><button class="ui button red fluid">{{service.status}}</button></td>
+							</tr>
+						</tbody>
+					</table>	
+			</div>
+			<div class="ui bottom attached tab segment" data-tab="cuentas_usuario">
+				<table class="ui celled table">
+				<thead>
+					<tr>
+						<th>{{$ctrl.code}}</th>
+						<th>{{$ctrl.date}}</th>
+						<th>{{$ctrl.solicitud}}</th>
+						<th>{{$ctrl.status}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "service in $ctrl.servicesc">
+						<td>{{service.cuentaServiceId}}</td>
+						<td>{{service.fechaInit}}</td>
+						<td>{{service.serviceMode}}</td>
+						<td ng-if="service.status == 'En Progreso'"><button class="ui button blue fluid">{{service.status}}</button></td>
+						<td ng-if="service.status == 'Atendido'"><button class="ui button green fluid">{{service.status}}</button></td>
+						<td ng-if="service.status == 'A destiempo'"><button class="ui button yellow fluid">{{service.status}}</button></td>
+						<td ng-if="service.status == 'Cancelado'"><button class="ui button red fluid">{{service.status}}</button></td>
+					</tr>
+				</tbody>
+			</table>						
+			</div>	
+		<!-- ========== Tabla de servicios ==========-->
+	</div>
 </div>
 		

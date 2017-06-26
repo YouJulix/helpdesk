@@ -6,19 +6,19 @@ angular.
 				var self = this;
 
 				self.idSolicitud = $routeParams.idSolicitud;
-
+				console.log(self.idSolicitud);
 				$http({
 					method : 'GET',
-					url : 'http://localhost:8000/api/v1.0/servicio-software/' + self.idSolicitud
+					url : 'http://localhost:8000/api/v1.0/software/id/' + self.idSolicitud
 				}).success(function(data){//Array de objetos
 					self.servicioSoftware = data[0]; //Nos interesa sólo el primer y único elemento
 					//console.log(self.servicioSoftware);				
-					switch(self.servicioSoftware.tipo){
-						case "Instalación":
+					switch(self.servicioSoftware.serviceMode){
+						case "Instalación de software":
 							//$('.ui.menu').find('.item').tab('change tab', 'instalacion_software');//Es lo mismo(solo que más largo) a:
 							$('.menu .item').tab('change tab', 'instalacion_software');
 							break;
-						case "Descarga":
+						case "Descarga de software":
 							//$('.ui.menu').find('.item').tab('change tab', 'descarga_software');//Es lo mismo(solo que más largo) a:
 							$('.menu .item').tab('change tab', 'descarga_software');
 							break;
@@ -29,9 +29,10 @@ angular.
 
 
 				self.updateServSoftw = function(){
+					console.log(self.servicioSoftware);
 					$http({
 						method : 'PUT',
-						url : 'http://localhost:8000/api/v1.0/servicio-software/' + self.idSolicitud,
+						url : 'http://localhost:8000/api/v1.0/software/id/' + self.idSolicitud,
 						data : self.servicioSoftware
 					}).success(function(data){//Array de objetos
 						alert("Solicitud de servicio actualizada exitosamente!");
@@ -44,7 +45,7 @@ angular.
 					if(r == true){
 						$http({
 							method : 'DELETE',
-							url : 'http://localhost:8000/api/v1.0/servicio-software/' + self.idSolicitud
+							url : 'http://localhost:8000/api/v1.0/software/id/' + self.idSolicitud
 						}).success(function(data){//Array de objetos
 							alert("Solicitud de Servicio eliminada exitosamente!");
 							window.location = "#!/es/admin/notificaciones";
@@ -55,7 +56,13 @@ angular.
 						//No hagas nada
 					}
 				}
-				initCompsSemanticUI();
+				
+				$(document).ready(function(){
+					initCompsSemanticUI();	
+					$('#fechaLimite').calendar();
+					$('#fechaDescarga').calendar();
+				});
+				
 
 			}]
 		});

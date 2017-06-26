@@ -9,7 +9,10 @@ exports.addAPIRouter = function(app, SoftwareServiceCtrl){ //Siempre hay que uti
 		.post(SoftwareServiceCtrl.addService);
 		
 	software.route('/software/:user') 
-		.get(SoftwareServiceCtrl.findServiceByUser)
+		.get(SoftwareServiceCtrl.findServiceByUser);
+
+	software.route('/software/id/:softwareServiceId') 
+		.get(SoftwareServiceCtrl.findServicioSoftwById)
 		.put(SoftwareServiceCtrl.updateService)
 		.delete(SoftwareServiceCtrl.deleteService);
 	

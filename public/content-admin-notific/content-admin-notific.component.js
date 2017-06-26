@@ -18,16 +18,17 @@ angular.
 				});
 
 
-				/*$http({
+				$http({
 					method : 'GET',
-					url : 'http://localhost:8000/api/v1.0/servicio-software'
+					url : 'http://localhost:8000/api/v1.0/software'
 				}).success(function(data){ //Array de objetos
 					self.serviciosSoftware = data;
 					self.totalServSoftware = self.serviciosSoftware.length;
 					self.totalServicios += self.totalServSoftware;
 				}).error(function(){
 					alert("Error recuperando servicios de software");
-				});*/	
+				});
+
 				initCompsSemanticUI();
 			}]
 		});

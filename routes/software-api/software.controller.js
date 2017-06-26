@@ -20,6 +20,14 @@ exports.findServiceByUser = function(request, response){
 		response.status(200).jsonp(software);
 	});
 }
+exports.findServicioSoftwById = function(req, res){
+	Software.find({ "softwareServiceId" : req.params.softwareServiceId }, function(err, servicioSoftware){
+		if(err)
+			res.send(500, err.message);
+		console.log('GET /servicio-software/:softwareServiceId');
+		res.status(200).jsonp(servicioSoftware);
+	});
+}
 
 exports.addService = function(request, response){
 	console.log(request.body);
@@ -50,7 +58,7 @@ exports.addService = function(request, response){
 }
 
 exports.updateService = function(request, response){
-	Service.find({ userId : req.params.user }, function(errno, service){ //busco elemento a actualizar(mongoose guarda su _id)
+	Software.find({ "softwareServiceId" : request.params.softwareServiceId }, function(errno, service){ //busco elemento a actualizar(mongoose guarda su _id)
 		service[0].nombreSoftware	=	request.body.nombreSoftware;
 		service[0].versionSoftware 	=	request.body.versionSoftware;
 		service[0].numeroEquipos 	=	request.body.numeroEquipos;
@@ -73,7 +81,7 @@ exports.updateService = function(request, response){
 }
 
 exports.deleteService = function(request, response){
-	Service.find({ userId : req.params.user }, function(errno, service){ //busco elemento a actualizar(mongoose guarda su _id)
+	Software.find({ "softwareServiceId" : request.params.softwareServiceId }, function(errno, service){ //busco elemento a actualizar(mongoose guarda su _id)
 		service[0].remove(function(errno){ //Find regresa un array, debemos tomar el primer y único elemento que regreso ( en la posicion [0])
 			if(errno)
 				return response.status(500).send(errno.message);

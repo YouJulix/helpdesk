@@ -12,7 +12,7 @@ angular.
 				}).success(function(data){ //Array de objetos
 					self.users = data;
 					self.totalUsers = self.users.length-1;//-1 porque no contaremos al usuario NOvaDesk(superadmin)
-					console.log(self.users);
+					//console.log(self.users);
 				}).error(function(){
 					alert("Error recuperando Usuarios");
 				});
@@ -90,8 +90,8 @@ angular.
 		            	if(self.popups[iii] != undefined){ //Si no se guardó un undefined en nuestro array//Esto es equivalente a decir que SI en la BD el atributo data.nickname del objeto está guardado con un valor válido, y no un 'undefined'
 		                	var element = document.getElementById(self.popups[iii]);//'<div class="popup-box chat-popup" id="'+ id +'">';
 							if(element !=null && element!=undefined){ //Si está creado el popup(existe el id(nickname) para este usuario)
-								console.log(right);
-								console.log(self.popups);
+								//console.log(right);
+								//console.log(self.popups);
 				            	element.style.right = right + "px"; //Acomodalo en donde debe
 				                right = right + 320; //Y prepara la identación para el siguiente elemento
 				                element.style.display = "block";
@@ -158,11 +158,12 @@ angular.
 						socket.off('load old msgs'); //QUitar la escucha del evento//Si no lo quitamos cada que se conecte alguien al servidor(socket) nuestro chat dibujara otra vez los chats guardados en la BD(duplicando, triplicando, etc.. los chats)
 					}
 					function AppendNewMsg(data){
-						console.log(data);
+						//console.log(data);
 							if(self.currentUserId == data.reciever){
 								//self.register_popup(data.nickname, data.nickname); //nickname = nickname de quien lo mandó
 								//Para esta app no tengo nickname ya que el nickname se creaba en el evento 'new user'(El cual descarte) del servidor en el cual el nuevo usuario le enviaba su nickname
 								self.register_popup(data.sender, data.sender);//Pero tenemos el atributo 'sender' que en sí es el que importa
+								//DESACTIVADA LA INSTRUCCION ANTERIOR PARA QUE NO SE CREE EL POPUP
 							}
 							//Llenamos con mensajes el popup
 							$.each($('.chat'),function(index,datax){ //Para cada caja de mensajes, auqellas que tengan su atributo chatboxid == data.reciever || chatboxid == data.sender

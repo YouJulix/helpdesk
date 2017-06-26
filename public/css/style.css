@@ -104,7 +104,7 @@ chat .button:active {
   bottom: 17px;
 }
 
-chat .chat {
+chat .chatBox {
   position: absolute;
   background: #28282B;
   top: 0;
@@ -156,7 +156,10 @@ chat .conversation {
   right: 200px;
   width: 300px;
   height: 350px;
-  background: black;
+  /*background: black;*/
+  background-color: white;
+  /**/
+  position: fixed;
 }
 
 chat .conversation__header {
@@ -175,8 +178,10 @@ chat .conversation__msg {
   font-size: 12px;
 }
 chat .conversation__msg span {
-  background: white;
-  color: black;
+  /*background: white;*/
+  background: rgb(0,200,20);
+  /*color: black;*/
+  color:white;
   display: table;
   padding: 10px 20px;
   border-radius: 100px;
@@ -189,7 +194,7 @@ chat .right {
   color: white !important;
 }
 
-chat .input {
+chat .message {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -201,7 +206,7 @@ chat .input {
   transition: 0.3s;
   color: white;
 }
-chat .input:focus {
+chat .message:focus {
   background: #121212;
 }
 

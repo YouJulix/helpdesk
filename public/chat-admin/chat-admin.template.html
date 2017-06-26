@@ -5,14 +5,14 @@
 <nav class="chat">
     <h2 class="chat__users">Usuarios en línea: 2</h2>
     <ul class="chat__wrapper">
-        <li class="chat__human">
+        <li class="chat__human" ng-click="$ctrl.openChat('nayeliCitlalli')">
             <!-- <img class="chat__avatar" src="https://robohash.org/joe" alt="" />-->
             <i class="icon circle small green"></i>
-            <i class="icon user large"></i>
+            <i class="icon user large"></i>alejandroRodriguez
             <span class="chat__name">Nayeli Citlalli</span>
         </li>
         
-        <li class="chat__human">
+        <li class="chat__human" ng-click="$ctrl.openChat('alejandroRodriguez')">
             <i class="icon circle small green"></i>
             <i class="icon user large"></i>
             <!-- <img class="chat__avatar" src="https://robohash.org/nah" alt="" /> -->
@@ -28,33 +28,28 @@
     </ul>
 </nav>
 
-<div class="conversation">
+<div class="conversation" id="chat-nayeliCitlalli">
     <div class="conversation__header">
         <i class="icon circle small green"></i>
         <i class="icon user large"></i>
         Nayeli Citlalli
         <span class="close-msg">&times;</span>
     </div>
-    <ul class="conversation__wrap">
-        <li class="conversation__msg cf">
-            <span>Hola</span>
-        </li>
-        
-        <li class="conversation__msg cf">
-            <span class="right">Que tál Nayeli!</span>
-        </li>
-        <li class="conversation__msg cf">
-            <span class="right">En que podemos ayudarte</span>
-        </li>
-        
-        <li class="conversation__msg cf">
-            <span>Disculpe aún no está lista la máquina que mandé a Redes?</span>
-        </li>
-        
-        <li class="conversation__msg cf">
-            <span class="right">Bien,..</span>
-        </li>
+    <ul chatboxId="nayeliCitlalli" class="chat">  
+        <!--Mensajes-->
     </ul>
-    
     <input class="input" type="text" placeholder="Escribir mensaje" />
 </div>  
+
+<div class="conversation" id="chat-alejandroRodriguez">
+    <div class="conversation__header">
+        <i class="icon circle small green"></i>
+        <i class="icon user large"></i>
+        Nayeli Citlalli
+        <span class="close-msg">&times;</span>
+    </div>
+    <ul chatboxId="alejandroRodriguez" class="chat">  
+        <!--Mensajes-->
+    </ul>
+    <input class="input" type="text" placeholder="Escribir mensaje" />
+</div>

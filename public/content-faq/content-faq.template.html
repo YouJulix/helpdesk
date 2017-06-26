@@ -15,9 +15,11 @@
 		    	<p>{{faq.content}}</p>
 		  	</div>
 
-		  	<div ng-if="$last == $index">
+		  	<div ng-if="$last">
 		  		<script type="text/javascript">
-		  			$('.ui.accordion').accordion();
+		  			$(document).ready(function(){
+		  				$('.ui.accordion').accordion();	
+		  			});
 		  		</script>
 		  	</div>
 		</div>

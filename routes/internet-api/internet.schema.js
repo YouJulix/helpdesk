@@ -9,6 +9,7 @@ var internetSchema = new Schema(
 		serviceMode			: {type:String},  
 		status				: {type:String},
 		location			: {type:String},
+		aula				: {type:String},
 		/*Si el tipo de servicio es externo serán llenados los sig campos*/
 		mac					: {type:String},
 		/*Si el tipo de servicio es interno llenar los siguientes datos*/

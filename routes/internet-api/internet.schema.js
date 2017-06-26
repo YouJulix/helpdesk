@@ -20,6 +20,6 @@ var internetSchema = new Schema(
 	{ collection: 'servicesInternet' }	
 );
 
-internetSchema.index({ internetServiceId: 1 }, { unique:true } , {unique:true}); 
+//internetSchema.index({ internetServiceId: 1 }, { unique:true } , {unique:true}); 
 
 mongoose.model('internetService', internetSchema);

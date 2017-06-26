@@ -1,1 +1,5 @@
-angular.module('barraFooter', []);
+angular.module('barraFooter', [
+	'ngRoute'
+	]);
+
+

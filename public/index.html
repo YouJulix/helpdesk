@@ -11,11 +11,18 @@
 
 	<body>
 		<div ng-view></div>	<!--Aquí se diburán todos los componentes de acuerdo a la ruta en la que se encuentre(Las rutas están definidas en app.config.js) -->
-
-<script type="text/javascript" src="js/init-comps-semantic.js"></script>
 		<!-- JS-->
 		<script type="text/javascript" src="lib/jquery/jquery-3.2.1.js"></script>
 		<script type="text/javascript" src="lib/semantic/semantic.js"></script>
+
+
+		<!-- Componentes para que funcione el calendario y la hora -->
+		<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+		
+<!--Archivo que crea automaticamente socket.io-->
+      	<script src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="js/init-comps-semantic.js"></script>
+		
 		<!-- Components Angular-->
 		<script type="text/javascript" src="lib/angular/angular.js"></script>
 		<script type="text/javascript" src="lib/angular-route/angular-route.js"></script>
@@ -102,5 +109,6 @@
 		<script type="text/javascript" src="chat-admin/chat-admin.module.js"></script>
 		<script type="text/javascript" src="chat-admin/chat-admin.component.js"></script>	
 
+		
 	</body>
 </html>

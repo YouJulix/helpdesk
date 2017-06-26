@@ -18,7 +18,7 @@ angular.
 				});
 
 
-				$http({
+				/*$http({
 					method : 'GET',
 					url : 'http://localhost:8000/api/v1.0/servicio-software'
 				}).success(function(data){ //Array de objetos
@@ -27,7 +27,7 @@ angular.
 					self.totalServicios += self.totalServSoftware;
 				}).error(function(){
 					alert("Error recuperando servicios de software");
-				});
+				});*/	
 				initCompsSemanticUI();
 			}]
 		});

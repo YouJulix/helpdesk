@@ -104,7 +104,7 @@ chat .button:active {
   bottom: 17px;
 }
 
-chat .chat {
+chat .chatBox {
   position: absolute;
   background: #28282B;
   top: 0;
@@ -156,7 +156,10 @@ chat .conversation {
   right: 200px;
   width: 300px;
   height: 350px;
-  background: black;
+  /*background: black;*/
+  background-color: white;
+  /**/
+  position: fixed;
 }
 
 chat .conversation__header {
@@ -167,6 +170,11 @@ chat .conversation__header {
   margin-bottom: 10px;
   cursor: pointer;
 }
+ul.chat{
+  height:220px;
+  overflow: auto;
+  margin-bottom: 30px;
+}
 
 chat .conversation__msg {
   padding: 5px 10px;
@@ -175,8 +183,10 @@ chat .conversation__msg {
   font-size: 12px;
 }
 chat .conversation__msg span {
-  background: white;
-  color: black;
+  /*background: white;*/
+  background: rgb(0,200,20);
+  /*color: black;*/
+  color:white;
   display: table;
   padding: 10px 20px;
   border-radius: 100px;
@@ -189,7 +199,7 @@ chat .right {
   color: white !important;
 }
 
-chat .input {
+chat .message {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -201,7 +211,7 @@ chat .input {
   transition: 0.3s;
   color: white;
 }
-chat .input:focus {
+chat .message:focus {
   background: #121212;
 }
 
@@ -212,6 +222,12 @@ chat .close-msg {
 }
 
 /*Estilo de admin, TEMPORAL porque en sí será el mismo que el del usuario NO admin*/
+chat-admin .cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 chat-admin .title {
   margin: auto;
   position: absolute;
@@ -269,7 +285,7 @@ chat-admin .button:active {
   bottom: 17px;
 }
 
-chat-admin .chat{
+chat-admin .chatBox {
   position: absolute;
   background: #28282B;
   top: 0;
@@ -321,7 +337,10 @@ chat-admin .conversation {
   right: 200px;
   width: 300px;
   height: 350px;
-  background: black;
+  /*background: black;*/
+  background-color: white;
+  /**/
+  position: fixed;
 }
 
 chat-admin .conversation__header {
@@ -340,8 +359,10 @@ chat-admin .conversation__msg {
   font-size: 12px;
 }
 chat-admin .conversation__msg span {
-  background: white;
-  color: black;
+  /*background: white;*/
+  background: rgb(0,200,20);
+  /*color: black;*/
+  color:white;
   display: table;
   padding: 10px 20px;
   border-radius: 100px;
@@ -354,7 +375,7 @@ chat-admin .right {
   color: white !important;
 }
 
-chat-admin .input {
+chat-admin .message {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -366,7 +387,7 @@ chat-admin .input {
   transition: 0.3s;
   color: white;
 }
-chat-admin .input:focus {
+chat-admin .message:focus {
   background: #121212;
 }
 

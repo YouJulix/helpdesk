@@ -86,6 +86,7 @@ angular.
 								//localStorage.setItem("email", data.email);//NO FUNCA
 								localStorage.setItem("email", data[0].email);//NO FUNCA
 								localStorage.setItem("admin", data[0].admin);
+								localStorage.setItem("name", data[0].name);
 								if(data[0].admin == "false"){
 									window.location = '#!/' + self.lang +'/bienvenido';
 								}

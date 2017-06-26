@@ -3,9 +3,9 @@
 	"titleItem2" : "Reportes",
 	"titleItem3" : "Servicios",
 	"titleItem4" : "Preguntas Frecuentes",
-	"languageLabel" : "Idioma",
-	"spanishLabel" : "Español",
-	"englishLabel" : "Inglés",
+	"languageLabel" : "Leng",
+	"spanishLabel" : "Es",
+	"englishLabel" : "En",
 	"searchLabel" : "Buscar",
 	"logOutLabel" :  ""
 }

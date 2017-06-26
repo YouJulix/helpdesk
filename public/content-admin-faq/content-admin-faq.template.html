@@ -1,73 +1,64 @@
+<!--Modal add FAQ-->
+<div class="ui small modal eleven wide" id="modal1">
+	<form ng-submit="$ctrl.saveFaq()">
+		<div class="ui large form segment" >
+			<h2 class="ui dividing header teal"><i class="icon edit"></i>Nueva pregunta</h2>
+			<div class="fields">
+				<div class="field sixteen wide required">
+					<label>Pregunta</label>
+					<input ng-model="$ctrl.title" type="text" required>
+				</div>
+			</div>
+			<div class="fields">
+				<div class="field sixteen wide required">
+					<label>Respuesta</label>
+					<textarea ng-model="$ctrl.content" rows="4" required></textarea>
+				</div>
+			</div>
+			<button class="ui button teal" >Guardar</button>
+		</div>
+	</form>
+</div>
+<!--Fin Modal FAQ-->
+
+
 <div class="ui segment">
 	<h2 class="ui dividing header teal"><i class="icon help circle outline"></i>Preguntas Frecuentes</h2>
 	<div class="ui grid">
 		<div class="row">
 			<div class="sixteen wide column right aligned">
-				<button class="ui button"><i class="icon add circle"></i>Agregar pregunta</button>		
-			</div>
-			<div class="ui modal">
-  				<i class="close icon"></i>
-  				<div class="header">
-    				Modal Title
-  				</div>
- 				<div class="image content">
-	    			<div class="image">
-	      				An image can appear on left or an icon
-		    		</div>
-		    		<div class="description">
-		      			A description can appear on the right
-		    		</div>	
-	  			</div>
-  				<div class="actions">
-				    <div class="ui button">Cancel</div>
-				    <div class="ui button">OK</div>
-  				</div>
+				<button data-modal="modal1" id="call-modals" class="ui button">
+					<i class="icon add circle"></i>
+					Agregar pregunta
+				</button>		
 			</div>
 		</div>
 	</div>
-					
-	<div style="height: 20px;">
-		
-	</div>
-	<div class="ui styled fluid accordion">
-			<div class="title">
-		    	<i class="dropdown icon"></i>
-		    	¿Cómo iniciar sesión en el Aula Virtual?
-		  	</div>
-			<div class="content">
-		    	<p class="transition hidden">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
-		    	<div class="ui grid right aligned transition hidden">
-		    		<div class="row">
-		    			<div class="column">
-			    				<button class="ui button green"><i class="icon edit"></i>Editar</button>
-				    			<button class="ui button orange"><i class="icon trash"></i>Borrar</button>		
-		    			</div>
+
+	<div ng-repeat=" faq in $ctrl.faqs track by $index " class="ui styled fluid accordion">
+		<div class="title">
+		   	<i class="dropdown icon"></i>
+		   	{{faq.title}}
+		</div>
+		<div class="content">
+		  	<p class="transition hidden">
+		  		{{faq.content}}
+		  	</p>
+			
+			<div class="ui grid right aligned transition hidden">
+		    	<div class="row">
+		    		<div class="column">
+			    		<button class="ui button green"><i class="icon edit"></i>Editar</button>
+						<button class="ui button orange"><i class="icon trash"></i>Borrar</button>		
 		    		</div>
-			    </div>
-		  	</div>
-			<div class="title">
-			   	<i class="dropdown icon"></i>
-			   	¿Cómo pedir un Aula de Clases?
+		    	</div>
 			</div>
-			<div class="content">
-			   	<p class="transition hidden">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
-			   	<div class="ui grid right aligned transition hidden">
-					<div class="row">
-						<div class="column">
-							<button class="ui button green"><i class="icon edit"></i>Editar</button>
-				   			<button class="ui button orange"><i class="icon trash"></i>Borrar</button>		
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="title active">
-		    	<i class="dropdown icon"></i>
-				¿Cómo reporte un equipo en malas condiciones?
-			</div>
-			<div class="content active">
-				<p class="transition visible">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
-					<button class="ui button green transition visible" style="display: inline-block !important;"><i class="icon edit"></i>Editar</button>
-					<button class="ui button orange transition visible" style="display: inline-block !important;"><i class="icon trash"></i>Borrar</button>	
-			</div>
+		</div>
+		<div ng-if="$last == $index">
+			<script type="text/javascript">
+		  		$('.ui.accordion').accordion();
+		  		$('#modal1').modal('attach events', '#call-modals');
+		  	</script>
+		</div>
 	</div>
 </div>

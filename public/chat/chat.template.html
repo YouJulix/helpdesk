@@ -2,7 +2,7 @@
 
 <!-- <h1 class="title">Chat to ya friends.</h1> -->
 
-<nav class="chat">
+<nav class="chatBox">
     <h2 class="chat__users">Chat NovaDesk</h2>
     <ul class="chat__wrapper">
         <li class="chat__human">
@@ -14,33 +14,40 @@
     </ul>
 </nav>
 
-<div class="conversation">
+<div class="conversation" id="NovaDesk">
     <div class="conversation__header">
         <i class="icon circle small green"></i>
         <i class="icon user large"></i>
-        Nayeli Citlalli
+        NovaDesk
         <span class="close-msg">&times;</span>
     </div>
-    <ul class="conversation__wrap">
+    <ul chatboxid="NovaDesk" class="chat">
+        <!-- 
+            Mensajes
         <li class="conversation__msg cf">
             <span>Hola</span>
         </li>
-        
         <li class="conversation__msg cf">
             <span class="right">Que tál Nayeli!</span>
         </li>
         <li class="conversation__msg cf">
             <span class="right">En que podemos ayudarte</span>
         </li>
-        
         <li class="conversation__msg cf">
             <span>Disculpe aún no está lista la máquina que mandé a Redes?</span>
         </li>
-        
         <li class="conversation__msg cf">
             <span class="right">Bien,..</span>
         </li>
+        <li class="conversation__msg cf">
+            <span>Hola</span>
+        </li>
+        <li class="conversation__msg cf">
+            <span class="right">Que tál Nayeli!</span>
+        </li>
+        <li class="conversation__msg cf">
+            <span class="right">En que podemos ayudarte</span>
+        </li> -->
     </ul>
-    
-    <input class="input" type="text" placeholder="Escribir mensaje" />
+    <input class="message" chatboxid="NovaDesk" type="text" placeholder="Escribir mensaje" />
 </div>

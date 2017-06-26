@@ -5,7 +5,5 @@ angular.
 			controller: ['$routeParams', function SeccionBienvenidoController($routeParams){
 				var self = this;
 				self.seccion = $routeParams.section;
-
-				
 			}]
 		});

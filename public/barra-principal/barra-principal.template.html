@@ -1,4 +1,4 @@
-<div class="ui fixed large menu stackable">
+<div class="ui fixed large menu stackable inverted teal">
 	<div class="ui container">
 		<a href="#!/{{$ctrl.lang}}/bienvenido" class="header item" id="bienvenido"><img class="logo" src="img/logo.png" />{{$ctrl.titleItem1}}</a>
 		<a href="#!/{{$ctrl.lang}}/reportes" class="item" id="reportes"><i class="icon edit"></i>{{$ctrl.titleItem2}}</a>
@@ -7,11 +7,7 @@
 		
 
   		<div class="right menu">
-  			<div class="item">
-      			<!-- <div class="ui action input">
-					<input type="text" name="search" placeholder="{{$ctrl.searchLabel}}" />
-					<button class="ui button">Seaas</button>
-				</div> -->
+  			<!-- <div class="item">
 				<div class="ui search">
 					<div class="ui icon input">
 						<form ng-submit="$ctrl.search()">
@@ -19,9 +15,8 @@
 							<i class="search icon"></i>
 						</form>
 					</div>
-					<!-- <div class="results"></div> -->
-				</div>
-			</div>
+				</div> 
+			</div>-->
   			<!-- <a class="item"><div class="ui fluid search selection dropdown">
 						<input type="hidden" name="idioma">
 						 <i class="dropdown icon"></i>
@@ -31,8 +26,8 @@
 									<div class="item" data-value="us"><i class="us flag"></i>Inglés</div>
 								</div>
 					</div></a> -->
-			<div class="item">
-				<div class="ui fluid selection dropdown">
+			<div class="item ">
+				<div class="ui fluid selection dropdown ">
 				<!-- <div class="ui fluid search selection dropdown"> -->
 					<input name="country" type="hidden" />
 					<i class="dropdown icon"></i>
@@ -42,6 +37,9 @@
 					  <div class="item" data-value="us" ng-click="$ctrl.checkLanguage('en')"><i class="us flag"></i>{{$ctrl.englishLabel}}</div>
 					</div>
 				</div>
+			</div>
+			<div class="item">
+				<b>{{$ctrl.userActual}}</b>
 			</div>
 			<a href="index.html" class="item" ng-click="$ctrl.clearLocalStorage()"><i class="icon power large red"></i>{{$ctrl.logOutLabel}}</a>
   		</div>

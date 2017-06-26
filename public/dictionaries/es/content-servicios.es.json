@@ -1,24 +1,48 @@
 {
-	"main_title" : "Servicios",
-	"main_icon" : "home",
-	"sections" : [
-		{
-			"title" : "Software",
-			"icon"  :  "edit",
-			"description" : " ",
-			"link" : " "
-		},
-		{
-			"title" : "Internet",
-			"icon"  :  "configure",
-			"description" : " ",
-			"link" : " "
-		},
-		{
-			"title" : "Cuentas de usuario",
-			"icon"  :  "help circle outline",
-			"description" : " ",
-			"link" : " "
-		}
-	]
+	"addService" 			: "Agregar servicio",
+	"servicesTitle"			: "Solicitar Servicio",
+	"code" 					: "Código",
+	"date"					: "Fecha",
+	"solicitud"				: "Servicio",
+	"status"				: "Estado",
+	"software"				: "Software",
+	"internet"				: "Internet",
+	"userAccount"			: "Cuentas de usuario",
+	"softwareInstallation"	: "Instalación de software",
+	"softwareDownload"		: "Descarga de software",
+	"nameSoftware"			: "Nombre del software",
+	"versionSoftware"		: "Versión del software",
+	"numberEquipment"		: "Números de equipos",
+	"classroom"				: "Aula",
+	"matter"				: "Materia",
+	"dateLimit"				: "Fecha límite",
+	"commentInstallation"	: "Comentarios",
+	"nameDownload"			: "Nombre del software",
+	"versionDownload"		: "Version del software",
+	"dateDownload"			: "Fecha de Descarga",
+	"commentDownload"		: "Comentarios",
+	"externalEquipment"		: "Equipo Externo",
+	"internalEquipment"		: "Equipo Interno",
+	"macAddress"			: "Dirección MAC",
+	"connectionPlace"		: "Lugar de Conexión",
+	"classrooms"			: "Aulas",
+	"library"				: "Biblioteca",
+	"assistantBuilding"		: "Edificio de asistentes",
+	"teachersBuilding"		: "Edificio de Profesores",
+	"electronicLaboratory"	: "Laboratorio de Electrónica",
+	"dateEnd"				: "Fecha de Termino",
+	"initialHour"			: "Fecha y hora de inicio",
+	"hourEnd"				: "Fecha y hora de termino",
+	"url"					: "Sitios(URL) de acceso",
+	"platform"				: "Plataforma",
+	"aulaVirtual"			: "Aula Virtual",
+	"kabl"					: "Kabl",
+	"activity"				: "Actividad",
+	"accessPlatform"		: "Solicitar acceso a la plataforma",
+	"recoveryPassword"		: "Restablecer contraseña",
+	"descriptionProblem"	: "Descripción del Problema",
+	"listServices"			: "Lista de Servicios",
+	"send"					: "Enviar"
 }
+
+

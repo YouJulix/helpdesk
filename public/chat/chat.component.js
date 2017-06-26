@@ -3,7 +3,7 @@ angular.
 	module('chat').
 		component('chat', {
 			templateUrl: 'chat/chat.template.html',
-			controller: function Chat(){
+			controller: function ChatController(){
 				self.agregarEventos = function(){
 									/*$('.js-trigger').on('click', function(){
 					    $('html').toggleClass('show-me');
@@ -46,7 +46,8 @@ angular.
 					}
 					function AppendNewMsg(data){
 							if(self.currentUserId == data.reciever){
-								//register_popup(data.nickname, data.nickname); //nickname = nickname de quien lo mandó
+								//self.register_popup(data.nickname, data.nickname); //nickname = nickname de quien lo mandó
+								//Para este caso como es un solo chat, no es necesario mandar a registrar un popUp diferente
 							}
 							//Llenamos con mensajes el popup
 							$.each($('.chat'),function(index,datax){ //Para cada caja de mensajes, auqellas que tengan su atributo chatboxid == data.reciever || chatboxid == data.sender
@@ -66,7 +67,7 @@ angular.
 							});
 						}
 
-						self.currentUserId = localStorage.getItem("email");
+					self.currentUserId = localStorage.getItem("name");
 
 
 					$(document).on( "keypress",'input.message', function(event) {//CUando document esté cargado

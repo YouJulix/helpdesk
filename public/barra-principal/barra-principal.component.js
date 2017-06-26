@@ -100,6 +100,7 @@ angular.
 					//Uso encodeURI para que se mantenga el estilo de codificación de las URI(escapar espacios, acentos,..), y que no se manden espacios en blancos no codificados(Cuando ingreso más de una palabra en el input de búsqueda)
 					//Tip: Use the decodeURI() function to decode an encoded URI.
 				}
+				self.userActual = localStorage.getItem("name");
 				initCompsSemanticUI();	
 			}]
 		});

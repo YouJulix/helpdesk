@@ -12,7 +12,7 @@ angular.
 							url: 'dictionaries/' + lang + '/barra-footer.' + lang + ".json"
 						}).success(function(data){
 								if(typeof(data) == 'object'){
-									console.log(data);
+									//console.log(data);
 									self.socialNetworks	= 	data.socialNetworks;
 									self.responsable	= 	data.responsable;
 									

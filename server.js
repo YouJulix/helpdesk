@@ -59,27 +59,11 @@ var internet_routes = require('./routes/internet-api/internet.routes');
 var InternetModel = require('./routes/internet-api/internet.schema'); 
 var InternetCtrl = require('./routes/internet-api/internet.controller');
 
-<<<<<<< HEAD
-=======
 //Api servicios cuentas de usuario
 var CuentasModel = require('./routes/cuentas-api/cuentas.schema'); 
 var CuentasCtrl = require('./routes/cuentas-api/cuentas.controller');
 var cuentas_routes = require('./routes/cuentas-api/cuentas.routes'); 
 
-//Connection to BD
-mongoose.connect(db.url);
-
-//Middlewares
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(methodOverride());
-
-//IMPORTANTE! vamos a DEFINIR donde vamos a SERVIR la pagina web del FRONT END, index.html, style.css, bootstrap, angular, etc..
-//app.use(express.static(__dirname + '/public')); //Igual funciona
-app.use(express.static('public')); //Para el servicio de archivos estáticos como, por ejemplo, imágenes, archivos CSS y archivos JavaScript, utilice la función de middleware incorporado express.static de Express.
-
-
->>>>>>> 80403c07a1db635567be850a344b33be0d2546a0
 //API routes
 users_routes.addAPIRouter(app, UserCtrl); //La funcion addAPIRouter enlaza rutas de un api que creamos a sus controladores(funciones); y hace que 'app' use esas rutas(app.use())
 //API routes_Reportes
@@ -90,8 +74,12 @@ servicios_routes.addAPIRouter(app, ServiceCtrl);
 software_routes.addAPIRouter(app, SoftwareCtrl);
 //Api internet_service
 internet_routes.addAPIRouter(app, InternetCtrl);
-<<<<<<< HEAD
+//API Servicio de Cuentas de Usuario
+cuentas_routes.addAPIRouter(app, CuentasCtrl);
+//Api faqs routes
+faqs_routes.addAPIRouter(app,FaqCtrl);
 
+	//Esquema para chat
 	var chatSchema = mongoose.Schema({
 		sender: String,
 		nickname: String,
@@ -99,7 +87,7 @@ internet_routes.addAPIRouter(app, InternetCtrl);
 		msg: String,
 		created: {type: Date, default: Date.now}
 	});
-	
+	//Exportar modelo con esquema definido
 	var ChatModel = mongoose.model('Message',chatSchema);
 
 		
@@ -144,16 +132,6 @@ internet_routes.addAPIRouter(app, InternetCtrl);
 		console.log("Node server running on http://localhost:" + port);
 	});
 	//Start Server
-	//app.listen(port, function(){
+	//app.listen(port, function(){ //Esto cambio cuando se agrego el chat(Ahora es la variable 'server' quien tiene el listen)
 	//	console.log("Node server running on http://localhost:" + port);
 	//});
-=======
-//API Servicio de Cuentas de Usuario
-cuentas_routes.addAPIRouter(app, CuentasCtrl);
-//Api faqs routes
-faqs_routes.addAPIRouter(app,FaqCtrl);
-//Start Server
-app.listen(port, function(){
-	console.log("Node server running on http://localhost:" + port);
-});
->>>>>>> 80403c07a1db635567be850a344b33be0d2546a0

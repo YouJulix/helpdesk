@@ -1,26 +1,45 @@
 <div class="ui segment">
-    <h2 class="ui dividing header teal"><i class="icon info circle"></i>
-    	{{$ctrl.faqslang}}
-    </h2>
-		<div style="height: 20px;">
-        </div>
-		
-        <div ng-repeat=" faq in $ctrl.faqs track by $index" class="ui styled fluid accordion">
-			<div class="title">
-	    		<i class="dropdown icon"></i>
-	    		{{faq.title}}
-		  	</div>
-			
-			<div class="content">
-		    	<p>{{faq.content}}</p>
-		  	</div>
+	<div class="ui grid">
+	    <div class="row">
+	    	<div class="eighteen wide column">
+			    <h2 class="ui dividing header teal"><i class="icon info circle"></i>
+			    	{{$ctrl.faqslang}}
+			    </h2>
+	    	</div>
+	    </div>
+	    
+	    <div class="row">
+	    	<div class="eighteen wide column right aligned">
+				<div class="ui search">
+					<div class="ui icon input">
+						<input class="prompt" placeholder="" type="text" name="" ng-model="$ctrl.searchText" >
+						<i class="search icon"></i>
+					</div>
+				</div> 	
+			</div>
+	    </div>
+	 
+		<div class="row">
+			<div class="eighteen wide column">
+				<div ng-repeat=" faq in $ctrl.faqs | filter:$ctrl.searchText" class="ui styled fluid accordion">
+					<div class="title">
+			    		<i class="dropdown icon"></i>
+			    		{{faq.title}}
+				  	</div>
+					
+					<div class="content">
+				    	<p>{{faq.content}}</p>
+				  	</div>
 
-		  	<div ng-if="$last">
-		  		<script type="text/javascript">
-		  			$(document).ready(function(){
-		  				$('.ui.accordion').accordion();	
-		  			});
-		  		</script>
-		  	</div>
+				  	<div ng-if="$last">
+				  		<script type="text/javascript">
+				  			$(document).ready(function(){
+				  				$('.ui.accordion').accordion();	
+				  			});
+				  		</script>
+				  	</div>
+				</div>
+			</div>	
 		</div>
+	</div>
 </div>

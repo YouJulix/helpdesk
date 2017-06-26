@@ -11,6 +11,7 @@ angular.
 					url : 'http://localhost:8000/api/v1.0/users'
 				}).success(function(data){ //Array de objetos
 					self.users = data;
+					self.totalUsers = self.users.length-1;//-1 porque no contaremos al usuario NOvaDesk(superadmin)
 					console.log(self.users);
 				}).error(function(){
 					alert("Error recuperando Usuarios");

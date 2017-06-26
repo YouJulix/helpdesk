@@ -1,9 +1,9 @@
-<button type="button" class="button js-trigger" style="font-family: Helvetica;">Chat (2)</button>
+<button type="button" class="button js-trigger" style="font-family: Helvetica;">Chat ({{$ctrl.totalUsers}})</button>
 
 <!-- <h1 class="title">Chat to ya friends.</h1> -->
 
 <nav class="chatBox">
-    <h2 class="chat__users">Usuarios en línea: 2</h2>
+    <h2 class="chat__users">Usuarios: {{$ctrl.totalUsers}}</h2>
     <ul class="chat">
         <li ng-repeat="user in $ctrl.users" class="chat__human" ng-click="$ctrl.register_popup(user.name, user.name)" ng-if='user.name!="NovaDesk"'>
             <!-- <img class="chat__avatar" src="https://robohash.org/joe" alt="" />-->

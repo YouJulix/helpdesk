@@ -88,6 +88,10 @@ angular.
 						self.servicesi = data;	//servicios de internet
 						//initCompsSemanticUI();
 						$('#modalServicios').modal('attach events', '#call-modals');
+						$('#fechaLimite').calendar();
+						$('#fechaDescarga').calendar();
+						$('#fechainicio').calendar();
+						$('#fechaTermino').calendar();
 					}).error(function(error){
 						console.log(error);
 					});
@@ -132,8 +136,12 @@ angular.
 						url 	: "http://localhost:8000/api/v1.0/software/" + localStorage.getItem("email")
 					}).success(function(data){
 						console.log(data);
-						self.servicess = data;	//servicios de internet
+						self.servicess = data;	//servicios de software
 						$('#modalServicios').modal('attach events', '#call-modals');
+						$('#fechaLimite').calendar();
+						$('#fechaDescarga').calendar();
+						$('#fechainicio').calendar();
+						$('#fechaTermino').calendar();
 					}).error(function(error){
 						console.log(error);
 					});
@@ -185,6 +193,10 @@ angular.
 						console.log(data);
 						self.servicesc = data;	//servicios de gestión de cuentas
 						$('#modalServicios').modal('attach events', '#call-modals');
+						$('#fechaLimite').calendar();
+						$('#fechaDescarga').calendar();
+						$('#fechaInicio').calendar();
+						$('#fechaTermino').calendar();
 					}).error(function(error){
 						console.log(error);
 					});
@@ -220,6 +232,6 @@ angular.
 						alert("Hubo problemas al enviar la solicitud, por favor intente otra vez");
 					});
 				}
-
+				//initCompsSemanticUI();
 			}]
 		});

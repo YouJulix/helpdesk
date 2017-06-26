@@ -49,3 +49,37 @@ exports.addService = function(request, response){
 	});
 }
 
+exports.updateService = function(request, response){
+	Service.find({ userId : req.params.user }, function(errno, service){ //busco elemento a actualizar(mongoose guarda su _id)
+		service[0].nombreSoftware	=	request.body.nombreSoftware;
+		service[0].versionSoftware 	=	request.body.versionSoftware;
+		service[0].numeroEquipos 	=	request.body.numeroEquipos;
+		service[0].aula 			=	request.body.aula;
+		service[0].materia 			=	request.body.materia;
+		service[0].fechaInit		= 	request.body.fechaInit;
+		service[0].fechaFinal 		= 	request.body.fechaFinal;
+		service[0].fechaDescarga 	= 	request.body.fechaDescarga;
+		service[0].comentarios 		=	request.body.comentarios;
+		service[0].status			=	request.body.status;
+		service[0].solucion			=	request.body.solucion;
+
+		service[0].save(function(errno){
+			if(errno)
+				return response.status(500).send(errno.message);
+			console.log("PUT/services/:user");
+			response.status(200).send(service);
+		})
+	})
+}
+
+exports.deleteService = function(request, response){
+	Service.find({ userId : req.params.user }, function(errno, service){ //busco elemento a actualizar(mongoose guarda su _id)
+		service[0].remove(function(errno){ //Find regresa un array, debemos tomar el primer y único elemento que regreso ( en la posicion [0])
+			if(errno)
+				return response.status(500).send(errno.message);
+			console.log('DELETE/services/:user');
+			response.status(200).send();
+		})
+	})
+}
+

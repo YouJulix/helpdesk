@@ -9,8 +9,9 @@ exports.addAPIRouter = function(app, SoftwareServiceCtrl){ //Siempre hay que uti
 		.post(SoftwareServiceCtrl.addService);
 		
 	software.route('/software/:user') 
-		.get(SoftwareServiceCtrl.findServiceByUser);
-
+		.get(SoftwareServiceCtrl.findServiceByUser)
+		.put(SoftwareServiceCtrl.updateService)
+		.delete(SoftwareServiceCtrl.deleteService);
 	
 	app.use("/api/v1.0", software); //Usar en la ruta '/api/v1.0', las rutas/api definidas en el objeto  users
 }

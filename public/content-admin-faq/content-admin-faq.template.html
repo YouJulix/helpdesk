@@ -15,7 +15,7 @@
 					<textarea ng-model="$ctrl.content" rows="4" required></textarea>
 				</div>
 			</div>
-			<button class="ui button teal" >Guardar</button>
+			<input class="ui button teal" type="submit" value="Guardar"/>
 		</div>
 	</form>
 </div>
@@ -24,17 +24,18 @@
 
 <div class="ui segment">
 	<h2 class="ui dividing header teal"><i class="icon help circle outline"></i>Preguntas Frecuentes</h2>
+	
 	<div class="ui grid">
 		<div class="row">
 			<div class="sixteen wide column right aligned">
-				<button data-modal="modal1" id="call-modals" class="ui button">
+				<button ng-click="$ctrl.nuevafaq()" data-modal="modal1" class="ui button call-modals">
 					<i class="icon add circle"></i>
 					Agregar pregunta
 				</button>		
 			</div>
 		</div>
 	</div>
-
+	<br>
 	<div ng-repeat=" faq in $ctrl.faqs track by $index " class="ui styled fluid accordion">
 		<div class="title">
 		   	<i class="dropdown icon"></i>
@@ -48,17 +49,26 @@
 			<div class="ui grid right aligned transition hidden">
 		    	<div class="row">
 		    		<div class="column">
-			    		<button class="ui button green"><i class="icon edit"></i>Editar</button>
-						<button class="ui button orange"><i class="icon trash"></i>Borrar</button>		
+			    		
+			    		<button ng-click="$ctrl.updatefaq(faq)" data-modal="modal1"  class="ui button green call-modals">
+			    			<i class="icon edit"></i>
+			    			Editar
+			    		</button>
+						<button ng-click="$ctrl.deletefaq(faq.idfaq)" class="ui button orange">
+							<i class="icon trash"></i>
+							Borrar
+						</button>		
 		    		</div>
 		    	</div>
 			</div>
 		</div>
-		<div ng-if="$last == $index">
+		<div ng-if="$last">
 			<script type="text/javascript">
-		  		$('.ui.accordion').accordion();
-		  		$('#modal1').modal('attach events', '#call-modals');
-		  	</script>
+				$(document).ready(function(e){
+					$('.ui.accordion').accordion();
+		  			$('#modal1').modal('attach events', '.call-modals');
+				});
+			</script>
 		</div>
 	</div>
 </div>

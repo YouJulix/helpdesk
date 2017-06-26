@@ -52,7 +52,7 @@ angular.
 								alert("Hubo un error en recuperar ellenguaje");
 							});	
 						}
-					}
+				}
 
 				$http({
 					method : 'GET',

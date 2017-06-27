@@ -1,6 +1,7 @@
 <div class="ui segment">
 	<h2 class="ui dividing header teal"><i class="icon edit"></i>{{$ctrl.failReports}}</h2>
 	<div class="ui grid">
+		
 		<div class="row">
 			<div class="sixteen wide column">
 				<!-- Inicio del modal -->
@@ -60,56 +61,65 @@
 						</div>
 					</form>
 				</div>
-				<!-- Fin del modal -->
-				
-				
-				
-
-				<button data-modal="modal1" id="call-modals" class="ui button"><i class="icon add circle"></i>{{$ctrl.addReport}}</button>
-				<!--<a href="user.html"><button class="ui button"><i class="icon add circle"></i>{{$ctrl.failReports}}</button></a>-->
-				
-				<table class="ui celled table">
-					<thead>
-						<tr>
-							<th>{{$ctrl.code}}</th>
-							<th>{{$ctrl.date}}</th>
-							<th>{{$ctrl.equipment}}</th>
-							<th>{{$ctrl.status}}</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat = "report in $ctrl.reports track by $index">
-							<td>{{report.idReporte}}</td>
-							<td>{{report.fecha}}</td>
-							<td>{{report.equipo}}</td>
-							<td ng-if="report.estado == 'En Progreso'">
-								<button ng-click="$ctrl.editReport(report)" data-modal="modal2" class="ui button blue fluid mddesk">	      
-									{{report.estado}}
-								</button>
-							</td>
-							
-							<td ng-if="report.estado == 'Atendido'">
-								<button ng-click="$ctrl.editReport(report)" data-modal="modal2" class="ui button green fluid mddesk">			{{report.estado}}
-								</button>
-							</td>
-							
-							<td ng-if="report.estado == 'A destiempo'">
-								<button ng-click="$ctrl.editReport(report)" data-modal="modal2" class="ui button yellow fluid mddesk">
-									{{report.estado}}
-								</button>
-							</td>
-							
-							<td ng-if="report.estado == 'Cancelado'">
-								<button ng-click="$ctrl.editReport(report)" data-modal="modal2" class="ui button red fluid mddesk">
-									{{report.estado}}
-								</button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
 			</div>
 		</div>
+		<!-- Fin del modal -->			
+		
+		<div class="row">
+			<div class="eight wide column">
+				<button data-modal="modal1" id="call-modals" class="ui button"><i class="icon add circle"></i>{{$ctrl.addReport}}</button>	
+			</div>
+			<div class="eight wide column right aligned">
+				<div class="ui search">
+					<div class="ui icon input">
+						<input class="prompt" placeholder="" type="text" name="" ng-model="$ctrl.searchText" >
+						<i class="search icon"></i>
+					</div>
+				</div> 	
+			</div>
+		</div>
+
+		<div class="row">
+			<table class="ui celled table">
+				<thead>
+					<tr>
+						<th>{{$ctrl.code}}</th>
+						<th>{{$ctrl.date}}</th>
+						<th>{{$ctrl.equipment}}</th>
+						<th>{{$ctrl.status}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "report in $ctrl.reports | filter:$ctrl.searchText">
+						<td>{{report.idReporte}}</td>
+						<td>{{report.fecha}}</td>
+						<td>{{report.equipo}}</td>
+						<td ng-if="report.estado == 'En Progreso'">
+							<button ng-click="$ctrl.editReport(report)" data-modal="modal2" class="ui button blue fluid mddesk">	      
+								{{report.estado}}
+							</button>
+						</td>
+						
+						<td ng-if="report.estado == 'Atendido'">
+							<button ng-click="$ctrl.editReport(report)" data-modal="modal2" class="ui button green fluid mddesk">			{{report.estado}}
+							</button>
+						</td>
+						
+						<td ng-if="report.estado == 'A destiempo'">
+							<button ng-click="$ctrl.editReport(report)" data-modal="modal2" class="ui button yellow fluid mddesk">
+								{{report.estado}}
+							</button>
+						</td>
+						
+						<td ng-if="report.estado == 'Cancelado'">
+							<button ng-click="$ctrl.editReport(report)" data-modal="modal2" class="ui button red fluid mddesk">
+								{{report.estado}}
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+				
 	</div>
-	
 </div>
-			

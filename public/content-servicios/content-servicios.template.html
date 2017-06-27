@@ -106,19 +106,19 @@
 													<div class="grouped fields">
 														<div class="field">
 															<div class="ui radio checkbox">
-																<input ng-model="$ctrl.aulas" type="radio" name="lugar_conexion">
+																<input ng-model="$ctrl.lugarconexion" type="radio" name="lugarconexion" value="{{$ctrl.classrooms}}">
 																<label>{{$ctrl.classrooms}}</label>
 															</div>
 														</div>
 														<div class="field">
 															<div class="ui radio checkbox">
-																<input ng-model="$ctrl.biblioteca" type="radio" name="lugar_conexion">
+																<input ng-model="$ctrl.lugarconexion" type="radio" name="lugarconexion" value="{{$ctrl.library}}">
 																<label>{{$ctrl.library}}</label>
 															</div>
 														</div>
 														<div class="field">
 															<div class="ui radio checkbox">
-																<input ng-model="$ctrl.asistentes" type="radio" name="lugar_conexion">
+																<input ng-model="$ctrl.lugarconexion" type="radio" name="lugarconexion" value="{{$ctrl.assistantBuilding}}">
 																<label>{{$ctrl.assistantBuilding}}</label>
 															</div>
 														</div>
@@ -128,13 +128,13 @@
 													<div class="grouped fields">
 														<div class="field">
 															<div class="ui radio checkbox">
-																<input  ng-model="$ctrl.profesores" type="radio" name="lugar_conexion">
+																<input  ng-model="$ctrl.lugarconexion" type="radio" name="lugarconexion" value="{{$ctrl.teachersBuilding}}">
 																<label>{{$ctrl.teachersBuilding}}</label>
 															</div>
 														</div>
 														<div class="field">
 															<div class="ui radio checkbox">
-																<input  ng-model="$ctrl.laboratorio" type="radio" name="lugar_conexion">
+																<input  ng-model="$ctrl.lugarconexion" type="radio" name="lugarconexion" value="{{$ctrl.electronicLaboratory}}">
 																<label>{{$ctrl.electronicLaboratory}}</label>
 															</div>
 														</div>

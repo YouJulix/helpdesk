@@ -108,7 +108,8 @@ angular.
 						"internetServiceId"		: "Nova-Serv-Int-" + Math.floor(Math.random() * 999999),
 						"serviceMode"			: self.mode,
 						"status"				: "En Progreso",
-						"location"				: self.lugar_conexion,
+						"location"				: self.lugarconexion,
+						"aula"					: self.aulaInternet,
 						"mac"					: self.mac,
 						"fechaInit"				: d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear(),
 						"fechafin"				: self.fecha,
@@ -218,6 +219,7 @@ angular.
 						"status"			: "En Progreso",
 						"solucion" 			: ""
 					}
+					console.log(self.data);
 					$http({
 						method	: 'POST',
 						url 	: 'http://localhost:8000/api/v1.0/cuentas',

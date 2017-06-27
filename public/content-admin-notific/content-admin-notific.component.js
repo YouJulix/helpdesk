@@ -29,6 +29,29 @@ angular.
 					alert("Error recuperando servicios de software");
 				});
 
+				$http({
+					method : 'GET',
+					url : 'http://localhost:8000/api/v1.0/internet'
+				}).success(function(data){ //Array de objetos
+					self.serviciosInternet = data;
+					self.totalServInternet = self.serviciosInternet.length;
+					self.totalServicios += self.totalServInternet;
+				}).error(function(){
+					alert("Error recuperando cuentas de usuario");
+				});
+
+
+				$http({
+					method : 'GET',
+					url : 'http://localhost:8000/api/v1.0/cuentas'
+				}).success(function(data){ //Array de objetos
+					self.cuentasUsuario = data;
+					self.totalCuentasUsuario = self.cuentasUsuario.length;
+					self.totalServicios += self.totalCuentasUsuario;
+				}).error(function(){
+					alert("Error recuperando cuentas de usuario");
+				});
+
 				initCompsSemanticUI();
 			}]
 		});

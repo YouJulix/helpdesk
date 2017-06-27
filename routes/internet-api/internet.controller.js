@@ -30,6 +30,7 @@ exports.addService = function(request, response){
 		serviceMode			: request.body.serviceMode,  
 		status				: request.body.status,
 		location			: request.body.location,
+		aula 				: request.body.aula,
 		/*Si el tipo de servicio es externo serán llenados los sig campos*/
 		mac					: request.body.mac,
 		/*Si el tipo de servicio es interno llenar los siguientes datos*/
